@@ -32,7 +32,7 @@ function Home() {
             Anvesh <span className="text-gradient">Cheela</span>
           </h1>
           <h2 className="mt-6 font-display text-xl font-semibold text-primary md:text-2xl">
-            Full-Stack Developer <span className="text-muted-foreground">&</span> Cloud / AI Engineer
+            Software developer
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
             I architect multi-tenant SaaS on Node.js, wire event-driven pipelines with Redis and BullMQ, and cut cloud bills with self-optimizing serverless ML. B.Tech CSE '27 · IIIT Sricity.
