@@ -51,9 +51,8 @@ function HireMeButton() {
 export function PortfolioFooter() {
   return (
     <footer className="mx-auto max-w-6xl px-4 pb-10 pt-6">
-      <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 font-mono text-[11px] text-muted-foreground md:flex-row">
+      <div className="flex flex-col items-center justify-center gap-3 border-t border-white/10 pt-6 font-mono text-[11px] text-muted-foreground md:flex-row">
         <div>© 2026 Anvesh Cheela · Hyderabad, India</div>
-        <div>Designed in the dark.</div>
       </div>
     </footer>
   );
