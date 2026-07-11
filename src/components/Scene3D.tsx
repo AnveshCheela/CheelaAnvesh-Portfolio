@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshDistortMaterial, Environment, Sphere, TorusKnot } from "@react-three/drei";
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import type { Mesh } from "three";
 
 function Knot() {
@@ -39,6 +39,10 @@ function Orb({ position, color, scale = 0.4 }: { position: [number, number, numb
 }
 
 export function Scene3D() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 45 }} dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
       <Suspense fallback={null}>
