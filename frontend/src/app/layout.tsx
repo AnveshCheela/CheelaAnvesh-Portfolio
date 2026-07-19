@@ -115,7 +115,7 @@ const jsonLd = {
       url: 'https://anveshcheela.com',
       image: 'https://anveshcheela.com/Anvesh-photo.png',
       sameAs: [
-        'https://www.linkedin.com/in/AnveshCheela/',
+        'https://www.linkedin.com/in/anvesh-cheela-063013292/',
         'https://github.com/AnveshCheela',
         'https://github.com/OpenCodeIntel',
         'https://opencodeintel.com',
@@ -227,10 +227,10 @@ export default function RootLayout({
             Python, Node.js, AWS.
           </p>
           <h2>Contact</h2>
-          <p>Email: anvesh.cheela@example.com</p>
+          <p>Email: cheelaanvesh@gmail.com</p>
           <p>Location: Boston, MA</p>
           <p>GitHub: github.com/AnveshCheela</p>
-          <p>LinkedIn: linkedin.com/in/AnveshCheela</p>
+          <p>LinkedIn: linkedin.com/in/anvesh-cheela-063013292/</p>
         </div>
 
         <Analytics />

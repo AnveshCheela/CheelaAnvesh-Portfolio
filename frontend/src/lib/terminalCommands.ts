@@ -31,8 +31,8 @@ export type CommandHandler = (args: string[], ctx: TerminalContext) => CommandRe
  * links never drift between commands.
  */
 export const CONTACT = {
-  email: 'anvesh.cheela@example.com',
-  linkedin: 'linkedin.com/in/AnveshCheela',
+  email: 'cheelaanvesh@gmail.com',
+  linkedin: 'linkedin.com/in/anvesh-cheela-063013292/',
   github: 'github.com/AnveshCheela',
   web: 'opencodeintel.com',
 } as const;

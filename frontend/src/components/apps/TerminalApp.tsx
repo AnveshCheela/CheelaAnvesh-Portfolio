@@ -177,21 +177,21 @@ function HireOutput() {
               <div>
                 <span className={`${sigil} mr-3 inline-block w-6`}>@</span>
                 <a
-                  href="mailto:anvesh.cheela@example.com"
+                  href="mailto:cheelaanvesh@gmail.com"
                   className={`${link} hover:underline`}
                 >
-                  anvesh.cheela@example.com
+                  cheelaanvesh@gmail.com
                 </a>
               </div>
               <div>
                 <span className={`${sigil} mr-3 inline-block w-6`}>in</span>
                 <a
-                  href="https://linkedin.com/in/AnveshCheela"
+                  href="https://linkedin.com/in/anvesh-cheela-063013292/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${link} hover:underline`}
                 >
-                  linkedin.com/in/AnveshCheela
+                  linkedin.com/in/anvesh-cheela-063013292/
                 </a>
               </div>
               <div>

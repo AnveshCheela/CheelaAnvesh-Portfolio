@@ -12,7 +12,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const TO_EMAIL   = 'anvesh.cheela@example.com';
+const TO_EMAIL   = 'cheelaanvesh@gmail.com';
 const FROM_EMAIL = 'AnveshOS <onboarding@resend.dev>';
 
 export async function POST(req: NextRequest) {

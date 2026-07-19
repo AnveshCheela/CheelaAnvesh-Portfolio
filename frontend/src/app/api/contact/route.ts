@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createRateLimiter, clientIp } from '@/lib/rateLimit';
 
-const TO_EMAIL = 'anvesh.cheela@example.com';
+const TO_EMAIL = 'cheelaanvesh@gmail.com';
 const FROM_EMAIL = 'AnveshOS <onboarding@resend.dev>'; // Use verified domain in production
 
 // Conservative throttle for a public contact form: per-IP sliding window plus a

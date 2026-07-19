@@ -12,8 +12,8 @@ import { renderLine } from '@/lib/linkifyTerminal';
 
 describe('renderLine', () => {
   it('linkifies an email as a mailto: anchor', () => {
-    render(<div>{renderLine('  mail  anvesh.cheela@example.com', true)}</div>);
-    expect(screen.getByRole('link')).toHaveAttribute('href', 'mailto:anvesh.cheela@example.com');
+    render(<div>{renderLine('  mail  cheelaanvesh@gmail.com', true)}</div>);
+    expect(screen.getByRole('link')).toHaveAttribute('href', 'mailto:cheelaanvesh@gmail.com');
   });
 
   it('linkifies a bare known host as an https anchor', () => {

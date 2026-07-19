@@ -30,15 +30,15 @@ const LINKS = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/AnveshCheela/',
+    href: 'https://www.linkedin.com/in/anvesh-cheela-063013292/',
     icon: Linkedin,
     description: 'AnveshCheela',
   },
   {
     label: 'Email',
-    href: 'mailto:anvesh.cheela@example.com',
+    href: 'mailto:cheelaanvesh@gmail.com',
     icon: Mail,
-    description: 'anvesh.cheela@example.com',
+    description: 'cheelaanvesh@gmail.com',
   },
 ];
 

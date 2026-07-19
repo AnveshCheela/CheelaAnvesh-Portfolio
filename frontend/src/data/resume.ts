@@ -82,7 +82,7 @@ export const RESUME: ResumeData = {
     phone:    personalInfo.phone,
     location: personalInfo.location,
     github:   'github.com/AnveshCheela',
-    linkedin: 'linkedin.com/in/AnveshCheela',
+    linkedin: 'linkedin.com/in/anvesh-cheela-063013292/',
   },
 
   summary:
