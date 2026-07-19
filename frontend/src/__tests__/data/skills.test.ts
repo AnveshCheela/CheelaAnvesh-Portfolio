@@ -5,7 +5,7 @@ import {
   type SkillCategory,
 } from '../../data/skills';
 
-const VALID_CATEGORIES: SkillCategory[] = ['language', 'frontend', 'backend', 'cloud', 'ai', 'tool'];
+const VALID_CATEGORIES: SkillCategory[] = ['language', 'frontend', 'backend', 'cloud', 'tool', 'mq', 'auth', 'dsa', 'oop'];
 
 describe('SKILLS array', () => {
   it('is non-empty', () => {
@@ -79,7 +79,7 @@ describe('SKILLS array', () => {
     }
   });
 
-  it('covers all 6 categories', () => {
+  it('covers all 9 categories', () => {
     const usedCategories = new Set(SKILLS.map(s => s.category));
     for (const cat of VALID_CATEGORIES) {
       expect(usedCategories.has(cat), `no skills in category: ${cat}`).toBe(true);
@@ -125,7 +125,7 @@ describe('SKILL_CATEGORIES', () => {
     expect(SKILL_CATEGORIES[0]).toBe('all');
   });
 
-  it('includes all 6 skill categories', () => {
+  it('includes all 9 skill categories', () => {
     for (const cat of VALID_CATEGORIES) {
       expect(SKILL_CATEGORIES).toContain(cat);
     }

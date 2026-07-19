@@ -13,7 +13,7 @@ describe('conciergeContext', () => {
   it('grounds on the real portfolio data', () => {
     const g = buildGrounding();
     expect(g).toContain(identity.name); // "Anvesh Cheela"
-    expect(g).toContain('Financial Copilot'); // a known projectMeta displayName
+    expect(g).toContain('TypeScript'); // a known skill
     expect(g).toContain('IDENTITY');
     expect(g).toContain('PROJECTS');
   });

@@ -434,7 +434,7 @@ export default function SkillsDashboardApp() {
   // Footer stats: per-category count + average proficiency, as width + opacity
   // bars (no color). Order matches the legacy footer.
   const catStats = useMemo(() => {
-    const order: Skill['category'][] = ['ai', 'cloud', 'backend', 'frontend', 'language', 'tool'];
+    const order: Skill['category'][] = ['cloud', 'backend', 'frontend', 'language', 'tool', 'mq', 'auth', 'dsa', 'oop'];
     return order.map((cat) => {
       const skills = SKILLS.filter((s) => s.category === cat);
       const avg = skills.reduce((a, b) => a + b.level, 0) / skills.length;
