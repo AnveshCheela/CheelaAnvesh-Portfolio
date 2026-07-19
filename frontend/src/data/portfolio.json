@@ -13,14 +13,12 @@
     "degree": "MS in Software Engineering Systems",
     "university": "Northeastern University"
   },
-  
   "bio": {
     "greeting": "Hey there!",
     "intro": "I'm a software engineer building AI dev tools at the MCP layer. OpenCodeIntel (a production MCP server with hybrid AST + BM25 + Cohere retrieval) and Saar (a Chrome extension on the Web Store that intercepts Claude.ai SSE streams for context-rot coaching). Recently finished my MS at Northeastern.",
     "passion": "I get genuinely excited about solving complex problems with clean, efficient code. Whether it's optimizing API performance, automating deployments, or building user-friendly interfaces, I'm all about creating technology that just works.",
     "personal": "When I'm not coding, you'll probably find me exploring Boston, learning new tech, or working on side projects (like this interactive portfolio you're experiencing right now!)."
   },
-
   "achievements": [
     {
       "metric": "65%",
@@ -30,164 +28,200 @@
     },
     {
       "metric": "99.9%",
-      "description": "Uptime with fault-tolerant AWS design", 
+      "description": "Uptime with fault-tolerant AWS design",
       "color": "blue",
       "impact": "Enterprise-grade reliability and availability"
     },
     {
       "metric": "35%",
       "description": "User engagement increase",
-      "color": "green", 
+      "color": "green",
       "impact": "Enhanced platform usability and retention"
     }
   ],
-
   "skills": {
     "categories": [
       {
-        "name": "Frontend & UI",
+        "name": "Languages & Frontend",
         "icon": "code",
         "color": "blue",
         "skills": [
           {
-            "name": "React/Next.js",
+            "name": "JavaScript & TypeScript",
             "level": 90,
-            "experience": "4+ years",
+            "experience": "3+ years",
             "status": "expert",
-            "projects": ["Financial Copilot", "Portfolio OS"],
+            "projects": [],
             "isCurrentlyUsing": true
           },
           {
-            "name": "TypeScript",
-            "level": 85,
-            "experience": "3+ years", 
-            "status": "advanced",
-            "projects": ["Financial Copilot", "SecureScale"],
-            "isCurrentlyUsing": true
-          },
-          {
-            "name": "Tailwind CSS",
+            "name": "C++ & Java",
             "level": 80,
+            "experience": "3+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": false
+          },
+          {
+            "name": "Python",
+            "level": 85,
             "experience": "2+ years",
             "status": "advanced",
-            "projects": ["Portfolio OS"],
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "SQL",
+            "level": 85,
+            "experience": "3+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "React.js & Next.js",
+            "level": 90,
+            "experience": "3+ years",
+            "status": "expert",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "Tailwind CSS, HTML, CSS",
+            "level": 85,
+            "experience": "3+ years",
+            "status": "advanced",
+            "projects": [],
             "isCurrentlyUsing": true
           }
         ]
       },
       {
-        "name": "Backend & APIs",
+        "name": "Backend & Architecture",
         "icon": "server",
         "color": "purple",
         "skills": [
           {
-            "name": "Node.js/Express",
+            "name": "Node.js & Express.js",
+            "level": 90,
+            "experience": "3+ years",
+            "status": "expert",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "REST APIs & WebSockets",
             "level": 85,
-            "experience": "3+ years",
-            "status": "advanced", 
-            "projects": ["MERN Platform"],
-            "isCurrentlyUsing": true
-          },
-          {
-            "name": "Python/Flask",
-            "level": 75,
             "experience": "2+ years",
-            "status": "intermediate",
-            "projects": ["Financial Copilot"],
+            "status": "advanced",
+            "projects": [],
             "isCurrentlyUsing": true
           },
           {
-            "name": "Go",
-            "level": 30,
-            "experience": "6 months",
-            "status": "learning",
-            "projects": ["Portfolio OS Backend"],
-            "isCurrentlyLearning": true
+            "name": "Microservices & Event-Driven",
+            "level": 80,
+            "experience": "2+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": true
           },
           {
-            "name": "REST/gRPC APIs",
-            "level": 80,
-            "experience": "3+ years",
+            "name": "Message Queues (BullMQ)",
+            "level": 75,
+            "experience": "1+ years",
+            "status": "intermediate",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "Auth (JWT) & RBAC",
+            "level": 85,
+            "experience": "2+ years",
             "status": "advanced",
-            "projects": ["PitneyShipPro", "Financial Copilot"],
+            "projects": [],
             "isCurrentlyUsing": true
           }
         ]
       },
       {
-        "name": "Cloud & Infrastructure", 
+        "name": "Database & ORM",
+        "icon": "database",
+        "color": "green",
+        "skills": [
+          {
+            "name": "PostgreSQL & MySQL",
+            "level": 85,
+            "experience": "3+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "MongoDB & DynamoDB",
+            "level": 80,
+            "experience": "2+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "Redis (Caching & Queues)",
+            "level": 75,
+            "experience": "1+ years",
+            "status": "intermediate",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "Prisma ORM",
+            "level": 80,
+            "experience": "2+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": true
+          }
+        ]
+      },
+      {
+        "name": "Cloud, DevOps & AI",
         "icon": "cloud",
         "color": "orange",
         "skills": [
           {
-            "name": "AWS",
-            "level": 75,
-            "experience": "2+ years",
-            "status": "intermediate-advanced",
-            "projects": ["SecureScale"],
-            "services": ["EC2", "S3", "RDS", "Lambda", "VPC", "IAM", "CloudWatch"],
-            "isCurrentlyUsing": true
-          },
-          {
-            "name": "Terraform",
-            "level": 70,
-            "experience": "1+ years",
-            "status": "intermediate",
-            "projects": ["SecureScale"],
-            "isCurrentlyUsing": true
-          },
-          {
-            "name": "Docker/Kubernetes",
-            "level": 65,
-            "experience": "2+ years", 
-            "status": "intermediate",
-            "projects": ["Financial Copilot", "SecureScale"],
-            "isCurrentlyUsing": true
-          },
-          {
-            "name": "CI/CD",
+            "name": "AWS (Lambda, S3, SQS, API Gateway)",
             "level": 80,
             "experience": "2+ years",
             "status": "advanced",
-            "projects": ["SecureScale", "Financial Copilot"],
-            "tools": ["GitHub Actions", "Jenkins"],
-            "isCurrentlyUsing": true
-          }
-        ]
-      },
-      {
-        "name": "Database & Data",
-        "icon": "database",
-        "color": "green", 
-        "skills": [
-          {
-            "name": "PostgreSQL",
-            "level": 75,
-            "experience": "3+ years",
-            "status": "advanced",
-            "projects": ["Financial Copilot", "SecureScale"],
+            "projects": [],
             "isCurrentlyUsing": true
           },
           {
-            "name": "MongoDB",
-            "level": 70,
+            "name": "Docker",
+            "level": 75,
             "experience": "2+ years",
             "status": "intermediate",
-            "projects": ["MERN Platform"],
-            "isCurrentlyUsing": false
+            "projects": [],
+            "isCurrentlyUsing": true
           },
           {
-            "name": "Redis",
-            "level": 60,
+            "name": "CI/CD (GitHub Actions)",
+            "level": 80,
+            "experience": "2+ years",
+            "status": "advanced",
+            "projects": [],
+            "isCurrentlyUsing": true
+          },
+          {
+            "name": "Generative AI (Google Gemini)",
+            "level": 85,
             "experience": "1+ years",
-            "status": "intermediate",
-            "projects": ["Performance Optimization"],
+            "status": "advanced",
+            "projects": [],
             "isCurrentlyUsing": true
           }
         ]
       }
     ],
-    
     "currentlyLearning": [
       {
         "name": "Advanced Kubernetes",
@@ -208,19 +242,21 @@
         "reason": "Scalable architecture patterns"
       }
     ],
-
     "tools": [
       {
         "category": "Development",
-        "items": ["VS Code", "Git", "Docker", "Postman", "Jest", "Cypress"]
+        "items": [
+          "Git",
+          "Prisma ORM"
+        ]
       },
       {
-        "category": "Cloud", 
-        "items": ["AWS Console", "Terraform", "GitHub Actions", "Vercel", "Railway"]
-      },
-      {
-        "category": "Monitoring",
-        "items": ["Prometheus", "Grafana", "CloudWatch", "EFK Stack"]
+        "category": "Cloud",
+        "items": [
+          "AWS CloudWatch",
+          "Vercel",
+          "Railway"
+        ]
       }
     ]
   }
