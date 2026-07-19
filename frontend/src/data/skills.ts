@@ -60,8 +60,6 @@ export const SKILLS: Skill[] = [
 
   // -- Tools -------------------------------------------------------------
   { id: 'git',        name: 'Git',              category: 'tool',     level: 5, xp: '4 yrs',   description: 'Rebasing, bisect, worktrees, hooks. Git is muscle memory.', deps: ['ts'] },
-  { id: 'graphql',    name: 'GraphQL',          category: 'tool',     level: 3, xp: '1 yr',    description: 'Schema-first design, Apollo Client, DataLoader.', deps: ['node'] },
-  { id: 'posthog',    name: 'PostHog',          category: 'tool',     level: 4, xp: '1 yr',    description: 'Product analytics, feature flags, session replay. Powers this portfolio.', deps: ['react'] },
   { id: 'vercel',     name: 'Vercel',           category: 'tool',     level: 5, xp: '2 yrs',   description: 'Frontend cloud platform, serverless functions, edge edge networking.', deps: ['react'] },
   { id: 'railway',    name: 'Railway',          category: 'tool',     level: 4, xp: '1 yr',    description: 'Infrastructure platform for deploying backend services and databases.', deps: ['docker'] },
   { id: 'render',     name: 'Render',           category: 'tool',     level: 4, xp: '1 yr',    description: 'Unified cloud to build and run all apps and websites.', deps: ['docker'] },
