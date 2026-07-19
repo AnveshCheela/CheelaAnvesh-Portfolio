@@ -38,8 +38,8 @@ export const identity = {
 // ---------------------------------------------------------------------------
 
 export const mastheadSpecLine = [
-  'AI ENGINEER',
-  'MCP-LAYER DEV TOOLS',
+  'SOFTWARE DEVELOPER',
+  'Building modern web applications',
   'BOSTON',
   'OCI / SAAR / CALLBUDGET',
 ] as const;
@@ -56,7 +56,7 @@ export interface SpecItem {
 }
 
 export const specs: SpecItem[] = [
-  { key: 'Discipline',  value: 'AI engineering · dev tools' },
+  { key: 'Discipline',  value: 'SOFTWARE DEVELOPERing · dev tools' },
   { key: 'Layer',       value: 'MCP / agent workflow' },
   { key: 'Stack',       value: 'TypeScript · Python · Go · AWS' },
   { key: 'Retrieval',   value: 'Hybrid AST + BM25 + Cohere rerank' },

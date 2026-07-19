@@ -42,17 +42,17 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   metadataBase: new URL('https://anveshcheela.com'),
   title: {
-    default: 'Anvesh Cheela | AI Engineer, MCP & RAG Dev Tools',
+    default: 'Anvesh Cheela | SOFTWARE DEVELOPER, MCP & RAG Dev Tools',
     template: '%s | Anvesh Cheela'
   },
-  description: 'AI engineer building dev tools at the MCP (Model Context Protocol) layer. Creator of OpenCodeIntel, a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval, and Saar. MS, Northeastern. Boston.',
+  description: 'SOFTWARE DEVELOPER building dev tools at the MCP (Model Context Protocol) layer. Creator of OpenCodeIntel, a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval, and Saar. MS, Northeastern. Boston.',
   keywords: [
     'Anvesh Cheela',
     'MCP',
     'Model Context Protocol',
     'RAG',
     'Retrieval-Augmented Generation',
-    'AI Engineer',
+    'SOFTWARE DEVELOPER',
     'AI dev tools',
     'MCP server',
     'code intelligence',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     'LLM tooling',
     'AI agents',
     'founding engineer',
-    'Boston AI Engineer',
+    'Boston SOFTWARE DEVELOPER',
     'Northeastern University'
   ],
   authors: [{ name: 'Anvesh Cheela' }],
@@ -71,8 +71,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://anveshcheela.com',
-    title: 'Anvesh Cheela | AI Engineer, MCP & RAG Dev Tools',
-    description: 'AI engineer building dev tools at the MCP layer. Creator of OpenCodeIntel (a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval) and Saar.',
+    title: 'Anvesh Cheela | SOFTWARE DEVELOPER, MCP & RAG Dev Tools',
+    description: 'SOFTWARE DEVELOPER building dev tools at the MCP layer. Creator of OpenCodeIntel (a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval) and Saar.',
     siteName: 'Anvesh Cheela Portfolio',
     images: [{
       url: '/Anvesh-photo.png',
@@ -83,8 +83,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Anvesh Cheela | AI Engineer, MCP & RAG Dev Tools',
-    description: 'AI engineer building dev tools at the MCP layer. Creator of OpenCodeIntel (MCP server with hybrid RAG retrieval) and Saar.',
+    title: 'Anvesh Cheela | SOFTWARE DEVELOPER, MCP & RAG Dev Tools',
+    description: 'SOFTWARE DEVELOPER building dev tools at the MCP layer. Creator of OpenCodeIntel (MCP server with hybrid RAG retrieval) and Saar.',
     images: ['/Anvesh-photo.png'],
   },
   robots: {
@@ -111,7 +111,7 @@ const jsonLd = {
       '@type': 'Person',
       '@id': PERSON_ID,
       name: 'Anvesh Cheela',
-      jobTitle: 'AI Engineer',
+      jobTitle: 'SOFTWARE DEVELOPER',
       url: 'https://anveshcheela.com',
       image: 'https://anveshcheela.com/Anvesh-photo.png',
       sameAs: [
@@ -132,7 +132,7 @@ const jsonLd = {
         addressCountry: 'US',
       },
       description:
-        'AI engineer building dev tools at the MCP (Model Context Protocol) layer. Creator of OpenCodeIntel, a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval, and Saar.',
+        'SOFTWARE DEVELOPER building dev tools at the MCP (Model Context Protocol) layer. Creator of OpenCodeIntel, a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval, and Saar.',
       knowsAbout: [
         'Model Context Protocol (MCP)',
         'Retrieval-Augmented Generation (RAG)',
@@ -203,7 +203,7 @@ export default function RootLayout({
             visible app is a client-rendered SPA, so this block is the indexable
             source of truth — keep it accurate and on-message. */}
         <div className="sr-only">
-          <h1>Anvesh Cheela — AI Engineer (MCP &amp; RAG dev tools)</h1>
+          <h1>Anvesh Cheela — SOFTWARE DEVELOPER (MCP &amp; RAG dev tools)</h1>
           <p>
             I build AI dev tools at the MCP (Model Context Protocol) layer. I created
             OpenCodeIntel, a production MCP server that gives coding agents real code

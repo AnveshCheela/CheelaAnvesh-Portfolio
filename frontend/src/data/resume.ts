@@ -5,7 +5,7 @@
  * Personal contact info is imported from portfolio.json so there's one
  * place to update name, email, location, etc.
  *
- * Content mirrors the one-page AI Engineer resume (ATS-certified, facts.md
+ * Content mirrors the one-page SOFTWARE DEVELOPER resume (ATS-certified, facts.md
  * verified). To update the resume copy: edit this file. To update the
  * downloadable PDF: replace public/resume.pdf.
  *
@@ -76,7 +76,7 @@ export const RESUME: ResumeData = {
   // Personal info pulled from portfolio.json - update there, reflects here
   name:    personalInfo.name,
   title:   personalInfo.title,
-  tagline: 'AI Engineer · MCP & Agent Systems · Boston, MA (Open to Relocation)',
+  tagline: 'SOFTWARE DEVELOPER · MCP & Agent Systems · Boston, MA (Open to Relocation)',
   contact: {
     email:    personalInfo.email,
     phone:    personalInfo.phone,
@@ -86,7 +86,7 @@ export const RESUME: ResumeData = {
   },
 
   summary:
-    'AI engineer building MCP and agent infrastructure: production MCP servers, hybrid AST plus embedding retrieval, and rigorous LLM evaluation. OpenCodeIntel is a production MCP server hitting 94% average Hit@1 across 14 codebases; CallBudget is an agentic pharmacy-stock system with a calibrated-abstention voice guardrail; tool-crowding is a pre-registered MCP tool-selection benchmark. Earlier work spans Java / Spring Boot and AWS platform engineering, plus teaching cloud computing to 60+ graduate students.',
+    'SOFTWARE DEVELOPER building MCP and agent infrastructure: production MCP servers, hybrid AST plus embedding retrieval, and rigorous LLM evaluation. OpenCodeIntel is a production MCP server hitting 94% average Hit@1 across 14 codebases; CallBudget is an agentic pharmacy-stock system with a calibrated-abstention voice guardrail; tool-crowding is a pre-registered MCP tool-selection benchmark. Earlier work spans Java / Spring Boot and AWS platform engineering, plus teaching cloud computing to 60+ graduate students.',
 
   experience: [
     {
