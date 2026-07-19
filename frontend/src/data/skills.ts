@@ -1,5 +1,5 @@
 /**
- * Unified skill data — single source of truth.
+ * Unified skill data â€” single source of truth.
  *
  * Consumed by:
  *   - SkillsDashboardApp  (visual skill tree)
@@ -12,7 +12,7 @@
 export type SkillCategory = 'language' | 'frontend' | 'backend' | 'cloud' | 'tool' | 'mq' | 'auth' | 'dsa' | 'oop';
 
 export interface Skill {
-  /** Unique identifier — used for dependency references */
+  /** Unique identifier â€” used for dependency references */
   id: string;
   name: string;
   category: SkillCategory;
@@ -95,7 +95,7 @@ export const SKILLS: Skill[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Display metadata — co-located with skill data (not in components)
+// Display metadata â€” co-located with skill data (not in components)
 // ---------------------------------------------------------------------------
 
 export const CAT_COLOR: Record<SkillCategory, string> = {
@@ -172,5 +172,5 @@ export function skillsForResume(): { category: string; items: string[] }[] {
     .map(([category, items]) => ({ category, items }));
 }
 
-/** All valid skill IDs — useful for validation */
+/** All valid skill IDs â€” useful for validation */
 export const SKILL_IDS = new Set(SKILLS.map(s => s.id));
