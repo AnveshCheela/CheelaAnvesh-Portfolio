@@ -52,8 +52,11 @@ describe('browser logic', () => {
 
   it('every start link is a real https url', () => {
     for (const link of START_LINKS) {
-      expect(link.url).toMatch(/^https:\/\//);
-      expect(hostOf(link.url)).not.toBeNull();
+      const urls = link.url ? [link.url] : (link.links?.map(l => l.url) || []);
+      for (const u of urls) {
+        expect(u).toMatch(/^https:\/\//);
+        expect(hostOf(u)).not.toBeNull();
+      }
     }
   });
 });
