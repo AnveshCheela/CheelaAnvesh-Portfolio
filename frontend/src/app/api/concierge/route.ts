@@ -1,11 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import Groq from 'groq-sdk';
 import { buildConciergeSystem, MAX_QUERY_LENGTH, sanitizeVoice, clampMessages } from '@/lib/conciergeContext';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const DEFAULT_MODEL = 'gemini-2.5-flash';
+const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
 // Bound the answer (and the cost). Concierge replies are 2-3 sentences.
 const MAX_TOKENS = 400;
 
@@ -71,7 +71,7 @@ async function getLimiter(): Promise<Limiter> {
 
 export async function POST(req: NextRequest) {
   // Hard gate: without a key the concierge is "offline" and the UI falls back.
-  if (!process.env.GEMINI_API_KEY) {
+  if (!process.env.GROQ_API_KEY) {
     return NextResponse.json({ error: 'concierge_unconfigured' }, { status: 503 });
   }
 
@@ -108,32 +108,29 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
   }
 
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({
-    model: process.env.CONCIERGE_MODEL || DEFAULT_MODEL,
-    systemInstruction: buildConciergeSystem(),
-    generationConfig: {
-      maxOutputTokens: MAX_TOKENS,
-    },
-  });
-
-  const history = thread.slice(0, -1).map((m: any) => ({
-    role: m.role === 'assistant' ? 'model' : 'user',
-    parts: [{ text: m.content }],
-  }));
-
-  const chat = model.startChat({ history });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+  const messages = [
+    { role: 'system', content: buildConciergeSystem() },
+    ...thread
+  ];
 
   try {
-    const result = await chat.sendMessageStream(latestUser.content);
+    const stream = await groq.chat.completions.create({
+      messages: messages as any,
+      model: process.env.CONCIERGE_MODEL || DEFAULT_MODEL,
+      max_tokens: MAX_TOKENS,
+      stream: true,
+    });
 
     const encoder = new TextEncoder();
     const readable = new ReadableStream<Uint8Array>({
       async start(controller) {
         try {
-          for await (const chunk of result.stream) {
-            const chunkText = chunk.text();
-            controller.enqueue(encoder.encode(sanitizeVoice(chunkText)));
+          for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content || '';
+            if (content) {
+              controller.enqueue(encoder.encode(sanitizeVoice(content)));
+            }
           }
           controller.close();
         } catch (err) {
@@ -150,7 +147,7 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (err: any) {
-    console.error('Gemini error:', err);
+    console.error('Groq error:', err);
     if (err?.status === 429) {
       return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
     }
