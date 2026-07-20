@@ -153,7 +153,7 @@ export const commandRegistry: Record<string, CommandHandler> = {
   ],
 
   hire: (args) => {
-    if (args[0] === 'Anvesh') {
+    if (args[0] === 'anvesh') {
       // Fire-and-forget: notify Anvesh via email that someone ran this command.
       // No await — visitor sees the animation instantly; backend handles it async.
       fetch('/api/notify-hire', { method: 'POST' }).catch(() => {/* silent */});
