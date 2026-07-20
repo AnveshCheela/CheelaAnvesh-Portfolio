@@ -53,9 +53,9 @@ export const HOME_PAGES: AppType[][] = [
   // Page 1 — supporting evidence. Activity first (top-left) because it's the
   // single highest-credibility surface: real, live, can't be faked. Browser
   // sits here too: it shows the shipped products running on the open web.
-  ['dev-ai', 'github-activity', 'skills-dashboard', 'analytics', 'changelog', 'browser'],
+  ['dev-ai', 'github-activity', 'skills-dashboard', 'analytics', 'browser'],
   // Page 2 — utilities, settings, easter eggs
-  ['terminal', 'games', 'file-explorer', 'display-options'],
+  ['terminal', 'display-options'],
 ];
 
 /**
@@ -67,8 +67,6 @@ export const HOME_PAGES: AppType[][] = [
  */
 export const IMMERSIVE_APP_TYPES: ReadonlySet<AppType> = new Set<AppType>([
   'terminal',
-  'games',
-  'file-explorer',
 ]);
 
 /** True when the open app owns the screen and the assistant FAB should hide. */

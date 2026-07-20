@@ -48,14 +48,9 @@ export const OPEN_APP_ALIASES: Record<string, AppType> = {
   'contact': 'contact',
   'ping': 'contact',
   'terminal': 'terminal',
-  'games': 'games',
-  'arcade': 'games',
   'settings': 'display-options',
   'preferences': 'display-options',
-  'finder': 'file-explorer',
-  'files': 'file-explorer',
   'resume': 'resume',
-  'changelog': 'changelog',
 };
 
 /** Valid arguments to the `theme` command. */

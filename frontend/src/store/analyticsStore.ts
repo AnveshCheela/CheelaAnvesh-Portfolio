@@ -134,7 +134,6 @@ const ALL_APP_TYPES: AppType[] = [
   'analytics',
   'contact',
   'terminal',
-  'games',
   'display-options',
 ];
 

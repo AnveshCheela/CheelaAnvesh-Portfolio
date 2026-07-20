@@ -16,10 +16,7 @@ import {
   BarChart3,
   Mail,
   Terminal,
-  Gamepad2,
   Settings,
-  HardDrive,
-  ScrollText,
   Github,
   Compass,
   LifeBuoy,
@@ -69,11 +66,8 @@ const components = {
   'analytics': lazy(() => import('@/components/apps/AnalyticsApp')),
   'contact': lazy(() => import('@/components/apps/ContactApp')),
   'terminal': lazy(() => import('@/components/apps/TerminalApp')),
-  'games': lazy(() => import('@/components/apps/GamesApp')),
   'display-options': lazy(() => import('@/components/apps/SettingsApp')),
-  'file-explorer': lazy(() => import('@/components/apps/FileExplorerApp')),
   'resume': lazy(() => import('@/components/apps/ResumeApp')),
-  'changelog': lazy(() => import('@/components/apps/ChangelogApp')),
   'github-activity': lazy(() => import('@/components/apps/GitHubActivityApp')),
   'browser': lazy(() => import('@/components/apps/BrowserApp')),
   'help': lazy(() => import('@/components/apps/HelpApp')),
@@ -139,15 +133,7 @@ export const appRegistry: Record<AppType, AppRegistration> = {
     pinnedToDock: false,
     launchpad: true,
   },
-  'games': {
-    component: components['games'],
-    icon: Gamepad2,
-    iconColor: 'green',
-    defaultSize: { width: 620, height: 580 },
-    defaultPosition: { x: 220, y: 160 },
-    pinnedToDock: false,
-    launchpad: true,
-  },
+
   'display-options': {
     component: components['display-options'],
     icon: Settings,
@@ -157,15 +143,7 @@ export const appRegistry: Record<AppType, AppRegistration> = {
     pinnedToDock: true,
     launchpad: true,
   },
-  'file-explorer': {
-    component: components['file-explorer'],
-    icon: HardDrive,
-    iconColor: 'sky',
-    defaultSize: { width: 750, height: 550 },
-    defaultPosition: { x: 180, y: 120 },
-    pinnedToDock: false,
-    launchpad: true,
-  },
+
   'resume': {
     component: components['resume'],
     icon: ResumeIcon,
@@ -175,15 +153,7 @@ export const appRegistry: Record<AppType, AppRegistration> = {
     pinnedToDock: true,
     launchpad: true,
   },
-  'changelog': {
-    component: components['changelog'],
-    icon: ScrollText,
-    iconColor: 'indigo',
-    defaultSize: { width: 600, height: 500 },
-    defaultPosition: { x: 250, y: 150 },
-    pinnedToDock: false,
-    launchpad: true,
-  },
+
   'github-activity': {
     component: components['github-activity'],
     icon: Github,

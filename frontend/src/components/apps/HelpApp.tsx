@@ -139,9 +139,7 @@ export const APPS_IN_HELP: AppType[] = [
   'contact',
   'terminal',
   'resume',
-  'file-explorer',
-  'changelog',
-  'games',
+  'display-options',
   'display-options',
 ];
 

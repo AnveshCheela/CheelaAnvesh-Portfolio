@@ -133,31 +133,19 @@ export const appLabels: Record<string, { title: string; windowTitle: string; des
     windowTitle: 'Terminal.app',
     description: 'For the CLI-curious',
   },
-  'games': {
-    title: 'Arcade',
-    windowTitle: 'Arcade.app',
-    description: 'Procrastination station',
-  },
+
   'display-options': {
     title: 'Preferences',
     windowTitle: 'Preferences.app',
     description: 'Make it yours',
   },
-  'file-explorer': {
-    title: 'Finder',
-    windowTitle: 'Finder.app',
-    description: 'Browse my repos',
-  },
+
   'resume': {
     title: 'Resume',
     windowTitle: 'Resume.pdf - Preview',
     description: 'The formal version of me',
   },
-  'changelog': {
-    title: 'Changelog',
-    windowTitle: 'Changelog.app',
-    description: 'What changed and when',
-  },
+
   'github-activity': {
     title: 'Activity',
     windowTitle: 'GitHub Activity.app',

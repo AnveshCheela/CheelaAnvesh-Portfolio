@@ -87,10 +87,6 @@ export function DesktopContextMenu({ children }: DesktopContextMenuProps) {
           <span>open ./about-me</span>
         </ContextMenuItem>
 
-        <ContextMenuItem onClick={() => openWindow('file-explorer')} className={ITEM_CLASS}>
-          <Prompt mono={mono} />
-          <span>ls -la ~/projects</span>
-        </ContextMenuItem>
 
         <ContextMenuItem onClick={() => openWindow('terminal')} className={ITEM_CLASS}>
           <Prompt mono={mono} />
