@@ -23,6 +23,7 @@ import { ArrowUp, ArrowUpRight, X } from 'lucide-react';
 import { clampMessages, sanitizeVoice } from '@/lib/conciergeContext';
 import { useChatStore } from '@/store/chatStore';
 import { TypingDots, StreamCaret } from '@/components/os/TypingDots';
+import portfolioData from '@/data/portfolio.json';
 
 const STARTERS = [
   'What do you build?',
@@ -250,7 +251,14 @@ export default function ChatPanel({
         {error && (
           <div className="flex items-center gap-3 px-1 pb-2 text-[12px] text-text-secondary">
             <span>
-              {error === 'offline' && 'Chat is offline right now.'}
+              {error === 'offline' && (
+                <>
+                  Chat is offline right now.{' '}
+                  <a href={`mailto:${portfolioData.personalInfo.email}`} className="underline hover:text-text transition-colors">
+                    Email me instead ↗
+                  </a>
+                </>
+              )}
               {error === 'rate_limited' && 'A lot of questions are coming in. Give it a minute.'}
               {error === 'error' && 'Something went wrong.'}
             </span>
