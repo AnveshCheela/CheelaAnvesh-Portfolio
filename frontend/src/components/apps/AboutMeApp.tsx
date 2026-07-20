@@ -45,9 +45,8 @@ import { ContactSection } from "./about/ContactSection";
 const SECTIONS = [
   { id: "overview",  number: "01", label: "Overview"        },
   { id: "journey",   number: "02", label: "Journey"         },
-  { id: "excites",   number: "03", label: "What Excites Me" },
-  { id: "currently", number: "04", label: "Currently"       },
-  { id: "contact",   number: "05", label: "Contact"         },
+  { id: "currently", number: "03", label: "Currently"       },
+  { id: "contact",   number: "04", label: "Contact"         },
 ] as const;
 
 type SectionId = typeof SECTIONS[number]["id"];
@@ -167,7 +166,6 @@ function SectionBody({ id }: { id: SectionId }) {
   switch (id) {
     case "overview":  return <OverviewBody />;
     case "journey":   return <JourneySection />;
-    case "excites":   return <ExcitesSection />;
     case "currently": return <CurrentlySection />;
     case "contact":   return <ContactSection />;
   }
@@ -485,17 +483,11 @@ function AboutMeMobile() {
           <JourneySection />
         </motion.section>
 
-        {/* What Excites Me - narrative typeset block. */}
-        <motion.section {...sectionMotion} id={SECTION_DOM_ID("excites")} data-section-id="excites" className="about-snap flex flex-col gap-4">
-          <MetaLabel as="p"><span>03</span><span aria-hidden className="mx-2 opacity-50">/</span>What Excites Me</MetaLabel>
-          <h2 className="editorial-head text-text text-[clamp(1.5rem,8vw,2rem)]">What Excites Me</h2>
-          <Hairline />
-          <ExcitesSection />
-        </motion.section>
+
 
         {/* Currently - list-shaped via its own component. */}
         <motion.section {...sectionMotion} id={SECTION_DOM_ID("currently")} data-section-id="currently" className="about-snap flex flex-col gap-4">
-          <MetaLabel as="p"><span>04</span><span aria-hidden className="mx-2 opacity-50">/</span>Currently</MetaLabel>
+          <MetaLabel as="p"><span>03</span><span aria-hidden className="mx-2 opacity-50">/</span>Currently</MetaLabel>
           <h2 className="editorial-head text-text text-[clamp(1.5rem,8vw,2rem)]">Currently</h2>
           <Hairline />
           <CurrentlySection />
@@ -503,7 +495,7 @@ function AboutMeMobile() {
 
         {/* Contact - link rows. */}
         <motion.section {...sectionMotion} id={SECTION_DOM_ID("contact")} data-section-id="contact" className="about-snap flex flex-col gap-4">
-          <MetaLabel as="p"><span>05</span><span aria-hidden className="mx-2 opacity-50">/</span>Contact</MetaLabel>
+          <MetaLabel as="p"><span>04</span><span aria-hidden className="mx-2 opacity-50">/</span>Contact</MetaLabel>
           <h2 className="editorial-head text-text text-[clamp(1.5rem,8vw,2rem)]">Contact</h2>
           <Hairline />
           <ContactSection />

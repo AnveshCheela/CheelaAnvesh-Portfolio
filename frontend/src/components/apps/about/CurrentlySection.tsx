@@ -38,31 +38,13 @@ export function CurrentlySection() {
           The work I want next
         </h3>
         <p className="text-lg text-text-secondary leading-relaxed">
-          Founding-engineer and AI-engineer roles at AI and dev-tools startups. Not
-          just sending resumes everywhere. I want teams where I can actually
-          contribute, where my input matters, where I can take charge of meaningful
-          work and make an impact.
+          I am looking for software engineering roles where I can leverage my full-stack and cloud computing skills to build scalable, high-impact applications. I want to join teams that value engineering excellence, where my input matters, and where I can take charge of meaningful work.
         </p>
         <p className="font-mono-meta">What I&apos;m looking for</p>
         <Bulleted items={lookingFor} />
       </section>
 
-      <section className="flex flex-col gap-3">
-        <h3 className="editorial-head text-text text-[clamp(1.5rem,4cqi,2rem)]">
-          Teaching
-        </h3>
-        <p className="text-lg text-text-secondary leading-relaxed">
-          TA&apos;d Network Structures &amp; Cloud Computing (CSYE6225). Graded
-          assignments, held office hours, helped 60+ grad students debug their AWS
-          infrastructure at 11 PM, explained why their database queries were slow,
-          reviewed code, answered endless questions.
-        </p>
-        <p className="text-lg text-text-secondary leading-relaxed">
-          It was exhausting and energizing at the same time. Their questions forced me
-          to rethink things I thought I understood. Teaching really does make you learn
-          things at a deeper level.
-        </p>
-      </section>
+
 
       <section className="flex flex-col gap-3">
         <h3 className="editorial-head text-text text-[clamp(1.5rem,4cqi,2rem)]">
@@ -135,31 +117,7 @@ export function CurrentlySection() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
-        <h3 className="editorial-head text-text text-[clamp(1.5rem,4cqi,2rem)]">
-          Life beyond code
-        </h3>
-        <p className="text-lg text-text-secondary leading-relaxed">
-          A full plate is a lot to juggle. The routine I built around it keeps me
-          sane. I still make time for:
-        </p>
-        <div className="flex flex-col">
-          {lifeItems.map((item, i) => (
-            <div key={item.title} className="flex flex-col">
-              <div className="flex flex-col gap-1 py-3">
-                <span className="font-display text-text text-xl">{item.title}</span>
-                <span className="text-text-secondary leading-relaxed">{item.detail}</span>
-              </div>
-              {i < lifeItems.length - 1 && <Hairline />}
-            </div>
-          ))}
-        </div>
-        <p className="text-text-secondary leading-relaxed mt-2">
-          Oh, and I&apos;m team pineapple on pizza. Don&apos;t @ me.
-        </p>
-      </section>
 
-      <Hairline />
 
       <section className="flex flex-col gap-3">
         <h3 className="editorial-head text-text text-[clamp(1.5rem,4cqi,2rem)]">
