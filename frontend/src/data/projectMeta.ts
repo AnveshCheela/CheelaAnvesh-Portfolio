@@ -47,6 +47,7 @@ export const projectMeta: Record<string, ProjectMeta> = {
   'Gymrats-React': {
     displayName: "Gymrats",
     tagline: "Your ultimate fitness companion",
+    descriptionOverride: "Gymrats is a comprehensive fitness tracking application built with React. It helps users monitor their workouts, track their progress, and achieve their fitness goals with an intuitive and interactive interface.",
     featured: true,
     category: 'personal',
     status: 'completed',

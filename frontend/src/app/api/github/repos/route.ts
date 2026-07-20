@@ -78,7 +78,7 @@ export async function GET() {
           displayName: meta.displayName,
           tagline: meta.tagline,
           description: meta.descriptionOverride ?? meta.tagline,
-          htmlUrl: '',
+          htmlUrl: `https://github.com/AnveshCheela/${name}`,
           homepage: meta.homepageOverride ?? null,
           language: meta.extraTech?.[0] ?? null,
           stars: 0,
