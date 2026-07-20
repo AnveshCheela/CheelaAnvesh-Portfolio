@@ -22,17 +22,17 @@ export interface EnrichedRepo {
   story: string[];
   achievements: { metric: string; label: string; detail: string }[];
   extraTech: string[];
-  org: 'AnveshCheela' | 'OpenCodeIntel';
+  org: 'AnveshCheela';
 }
 
 export async function GET() {
   try {
     const [personalRepos, orgRepos] = await Promise.all([
       getUserRepos('AnveshCheela').catch(() => []),
-      getOrgRepos('OpenCodeIntel').catch(() => []),
+      getOrgRepos('AnveshCheela').catch(() => []),
     ]);
 
-    const enrich = (repos: typeof personalRepos, org: 'AnveshCheela' | 'OpenCodeIntel'): EnrichedRepo[] =>
+    const enrich = (repos: typeof personalRepos, org: 'AnveshCheela'): EnrichedRepo[] =>
       repos.map(repo => {
         const meta = projectMeta[repo.name] ?? projectMeta[repo.name.toLowerCase()];
         return {
@@ -48,7 +48,7 @@ export async function GET() {
           topics: repo.topics ?? [],
           updatedAt: repo.updated_at,
           featured: meta?.featured ?? false,
-          category: meta?.category ?? (org === 'OpenCodeIntel' ? 'org' : 'personal'),
+          category: meta?.category ?? 'personal',
           status: meta?.status ?? 'completed',
           story: meta?.story ?? [],
           achievements: meta?.achievements ?? [],
@@ -59,7 +59,7 @@ export async function GET() {
 
     const all = [
       ...enrich(personalRepos, 'AnveshCheela'),
-      ...enrich(orgRepos, 'OpenCodeIntel'),
+      ...enrich(orgRepos, 'AnveshCheela'),
     ];
 
     // Deduplicate by name (org repos might overlap)
@@ -91,7 +91,7 @@ export async function GET() {
           story: meta.story,
           achievements: meta.achievements,
           extraTech: meta.extraTech ?? [],
-          org: (meta.category === 'org' ? 'OpenCodeIntel' : 'AnveshCheela') as 'AnveshCheela' | 'OpenCodeIntel',
+          org: 'AnveshCheela' as const,
         });
       }
     }

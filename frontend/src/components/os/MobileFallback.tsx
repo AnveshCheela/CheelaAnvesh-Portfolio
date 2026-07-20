@@ -50,22 +50,22 @@ const FEATURED_PROJECTS = [
     url: 'https://anveshcheela.com',
   },
   {
-    name: 'OpenCodeIntel',
-    tagline: 'Code intelligence platform with semantic search across repositories.',
-    tech: ['Python', 'TypeScript', 'AWS'],
-    url: 'https://github.com/OpenCodeIntel',
+    name: 'GymRats',
+    tagline: 'Fitness tracking and workout management platform.',
+    tech: ['React', 'Node.js', 'PostgreSQL'],
+    url: 'https://github.com/AnveshCheela/GymRats',
   },
   {
-    name: 'Financial Copilot',
-    tagline: 'OCR + NLP receipt automation pipeline with 95%+ extraction accuracy.',
-    tech: ['Python', 'React', 'GCP'],
-    url: 'https://github.com/AnveshCheela',
+    name: 'OpsGuardian',
+    tagline: 'Infrastructure monitoring and operations management platform.',
+    tech: ['Python', 'React', 'AWS'],
+    url: 'https://github.com/AnveshCheela/OpsGuardian',
   },
   {
-    name: 'SecureScale',
-    tagline: 'Fault-tolerant AWS infrastructure with 99.9% uptime via Terraform.',
-    tech: ['AWS', 'Terraform', 'Docker'],
-    url: 'https://github.com/AnveshCheela',
+    name: 'VerifyFlow',
+    tagline: 'Automated verification and validation workflow engine.',
+    tech: ['Python', 'FastAPI', 'Docker'],
+    url: 'https://github.com/AnveshCheela/VerifyFlow',
   },
 ];
 
@@ -92,9 +92,9 @@ export default function MobileFallback() {
         <h1 className="text-3xl font-bold tracking-tight mb-1">
           Anvesh Cheela
         </h1>
-        <p className="text-white/60 text-sm mb-1">Software Engineer · Boston, MA</p>
+        <p className="text-white/60 text-sm mb-1">Software Engineer · India</p>
         <p className="text-white/40 text-xs">
-          MS Software Engineering · Northeastern University · May 2026
+          B.Tech CSE · IIIT SriCity · 2027
         </p>
 
         <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-sm">

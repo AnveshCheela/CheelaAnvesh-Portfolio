@@ -21,7 +21,7 @@ import React from 'react';
 const LINK_RE = new RegExp(
   [
     'https?:\\/\\/\\S+',
-    '(?:opencodeintel\\.com|getsaar\\.com|AnveshCheela\\.com|github\\.com\\/\\S+|linkedin\\.com\\/\\S+)\\S*',
+    '(?:AnveshCheela\\.com|github\\.com\\/\\S+|linkedin\\.com\\/\\S+)\\S*',
     '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}',
   ].join('|'),
   'gi',

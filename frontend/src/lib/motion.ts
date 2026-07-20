@@ -33,6 +33,10 @@ export const spring = {
   parallax: { damping: 30, stiffness: 350, mass: 0.5 },
   /** Assistant orb / panel entrance. */
   bubble: { type: 'spring', damping: 18, stiffness: 240, mass: 0.7 },
+  /** Gentle reveal */
+  gentle: { type: 'spring', damping: 20, stiffness: 120, mass: 0.8 },
+  /** Micro-interactions */
+  micro: { type: 'spring', damping: 15, stiffness: 300, mass: 0.3 },
 } satisfies Record<string, Transition>;
 
 /** Collapses any animation to no perceptible motion (reduced-motion path). */

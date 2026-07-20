@@ -42,28 +42,27 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   metadataBase: new URL('https://anveshcheela.com'),
   title: {
-    default: 'Anvesh Cheela | SOFTWARE DEVELOPER, MCP & RAG Dev Tools',
+    default: 'Anvesh Cheela | Full-Stack Web Developer',
     template: '%s | Anvesh Cheela'
   },
-  description: 'SOFTWARE DEVELOPER building dev tools at the MCP (Model Context Protocol) layer. Creator of OpenCodeIntel, a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval, and Saar. MS, Northeastern. Boston.',
+  description: 'Full-stack web developer specializing in MERN, Next.js, AWS, and Docker. Creator of GymRats, OpsGuardian, and VerifyFlow. B.Tech CSE, IIIT SriCity. India.',
   keywords: [
     'Anvesh Cheela',
-    'MCP',
-    'Model Context Protocol',
-    'RAG',
-    'Retrieval-Augmented Generation',
-    'SOFTWARE DEVELOPER',
-    'AI dev tools',
-    'MCP server',
-    'code intelligence',
-    'hybrid retrieval',
-    'OpenCodeIntel',
-    'Saar',
-    'LLM tooling',
-    'AI agents',
-    'founding engineer',
-    'Boston SOFTWARE DEVELOPER',
-    'Northeastern University'
+    'full-stack web development',
+    'MERN stack',
+    'Next.js',
+    'React',
+    'Node.js',
+    'AWS',
+    'Docker',
+    'software developer',
+    'GymRats',
+    'OpsGuardian',
+    'VerifyFlow',
+    'TypeScript',
+    'MongoDB',
+    'IIIT SriCity',
+    'India software developer'
   ],
   authors: [{ name: 'Anvesh Cheela' }],
   creator: 'Anvesh Cheela',
@@ -71,8 +70,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://anveshcheela.com',
-    title: 'Anvesh Cheela | SOFTWARE DEVELOPER, MCP & RAG Dev Tools',
-    description: 'SOFTWARE DEVELOPER building dev tools at the MCP layer. Creator of OpenCodeIntel (a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval) and Saar.',
+    title: 'Anvesh Cheela | Full-Stack Web Developer',
+    description: 'Full-stack web developer specializing in MERN, Next.js, AWS, and Docker. Creator of GymRats, OpsGuardian, and VerifyFlow.',
     siteName: 'Anvesh Cheela Portfolio',
     images: [{
       url: '/Anvesh-photo.png',
@@ -83,8 +82,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Anvesh Cheela | SOFTWARE DEVELOPER, MCP & RAG Dev Tools',
-    description: 'SOFTWARE DEVELOPER building dev tools at the MCP layer. Creator of OpenCodeIntel (MCP server with hybrid RAG retrieval) and Saar.',
+    title: 'Anvesh Cheela | Full-Stack Web Developer',
+    description: 'Full-stack web developer specializing in MERN, Next.js, AWS, and Docker. Creator of GymRats, OpsGuardian, and VerifyFlow.',
     images: ['/Anvesh-photo.png'],
   },
   robots: {
@@ -102,7 +101,7 @@ export const metadata: Metadata = {
 
 // JSON-LD structured data for SEO. A @graph links the Person to the products
 // they built, and knowsAbout enumerates the exact topics search engines and
-// AI search should associate with Anvesh (MCP, RAG, code intelligence).
+// AI search should associate with Anvesh (full-stack web development).
 const PERSON_ID = 'https://anveshcheela.com/#Anvesh';
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -111,66 +110,69 @@ const jsonLd = {
       '@type': 'Person',
       '@id': PERSON_ID,
       name: 'Anvesh Cheela',
-      jobTitle: 'SOFTWARE DEVELOPER',
+      jobTitle: 'Full-Stack Web Developer',
       url: 'https://anveshcheela.com',
       image: 'https://anveshcheela.com/Anvesh-photo.png',
       sameAs: [
         'https://www.linkedin.com/in/anvesh-cheela-063013292/',
         'https://github.com/AnveshCheela',
-        'https://github.com/OpenCodeIntel',
-        'https://opencodeintel.com',
-        'https://getsaar.com',
       ],
       alumniOf: {
         '@type': 'CollegeOrUniversity',
-        name: 'Northeastern University',
+        name: 'IIIT SriCity',
       },
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Boston',
-        addressRegion: 'MA',
-        addressCountry: 'US',
+        addressLocality: 'SriCity',
+        addressRegion: 'Andhra Pradesh',
+        addressCountry: 'IN',
       },
       description:
-        'SOFTWARE DEVELOPER building dev tools at the MCP (Model Context Protocol) layer. Creator of OpenCodeIntel, a production MCP server with hybrid AST + BM25 + Cohere RAG retrieval, and Saar.',
+        'Full-stack web developer specializing in MERN, Next.js, AWS, and Docker. Creator of GymRats, OpsGuardian, and VerifyFlow. B.Tech CSE at IIIT SriCity, India.',
       knowsAbout: [
-        'Model Context Protocol (MCP)',
-        'Retrieval-Augmented Generation (RAG)',
-        'AI dev tools',
-        'MCP servers',
-        'Code intelligence',
-        'Hybrid retrieval (AST, BM25, reranking)',
-        'AI agents',
-        'LLM tooling',
-        'Semantic search',
+        'Full-stack web development',
+        'MERN stack',
+        'Next.js',
+        'React',
         'TypeScript',
-        'Python',
         'Node.js',
+        'MongoDB',
+        'Express.js',
         'AWS',
-        'Distributed systems',
+        'Docker',
+        'REST APIs',
+        'CI/CD',
       ],
     },
     {
       '@type': 'SoftwareApplication',
-      name: 'OpenCodeIntel',
-      url: 'https://opencodeintel.com',
-      applicationCategory: 'DeveloperApplication',
+      name: 'GymRats',
+      applicationCategory: 'HealthApplication',
       operatingSystem: 'Any',
       description:
-        'A production MCP server that gives coding agents real code intelligence through hybrid retrieval over a repository: AST structure, BM25 keyword search, and Cohere reranking (RAG).',
+        'A fitness tracking application built with the MERN stack for workout logging and progress tracking.',
       author: { '@id': PERSON_ID },
-      keywords: 'MCP, Model Context Protocol, RAG, code intelligence, hybrid retrieval, AI agents',
+      keywords: 'fitness, workout tracker, MERN stack, full-stack web development',
     },
     {
       '@type': 'SoftwareApplication',
-      name: 'Saar',
-      url: 'https://getsaar.com',
-      applicationCategory: 'BrowserApplication',
-      operatingSystem: 'Chrome',
+      name: 'OpsGuardian',
+      applicationCategory: 'DeveloperApplication',
+      operatingSystem: 'Any',
       description:
-        'A Chrome extension on the Web Store that intercepts Claude.ai streams to coach against context rot.',
+        'A DevOps monitoring and operations management tool built with modern web technologies.',
       author: { '@id': PERSON_ID },
-      keywords: 'Claude.ai, context engineering, LLM tooling, AI dev tools',
+      keywords: 'DevOps, monitoring, operations, full-stack web development',
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'VerifyFlow',
+      applicationCategory: 'DeveloperApplication',
+      operatingSystem: 'Any',
+      description:
+        'A verification and workflow automation application built with Next.js and AWS.',
+      author: { '@id': PERSON_ID },
+      keywords: 'verification, workflow, Next.js, AWS, full-stack web development',
     },
   ],
 };
@@ -203,32 +205,29 @@ export default function RootLayout({
             visible app is a client-rendered SPA, so this block is the indexable
             source of truth — keep it accurate and on-message. */}
         <div className="sr-only">
-          <h1>Anvesh Cheela — SOFTWARE DEVELOPER (MCP &amp; RAG dev tools)</h1>
+          <h1>Anvesh Cheela — Full-Stack Web Developer</h1>
           <p>
-            I build AI dev tools at the MCP (Model Context Protocol) layer. I created
-            OpenCodeIntel, a production MCP server that gives coding agents real code
-            intelligence through hybrid retrieval (RAG) over a repository: AST structure,
-            BM25 keyword search, and Cohere reranking. I also built Saar, a Chrome
-            extension on the Web Store that intercepts Claude.ai streams to coach against
-            context rot. MS in Software Engineering Systems from Northeastern University
-            (May 2026). Based in Boston, MA. Open to founding-engineer and AI-engineer
-            roles at AI and dev-tools startups.
+            I am a full-stack web developer specializing in the MERN stack, Next.js, AWS,
+            and Docker. I created GymRats, a fitness tracking application; OpsGuardian,
+            a DevOps monitoring tool; and VerifyFlow, a verification and workflow
+            automation app. B.Tech CSE at IIIT SriCity (2027). Based in India.
+            Open to software developer roles.
           </p>
           <h2>Projects</h2>
           <ul>
-            <li>OpenCodeIntel — production MCP server with hybrid AST + BM25 + Cohere RAG retrieval for code intelligence</li>
-            <li>Saar — Chrome extension that intercepts Claude.ai streams for context-rot coaching</li>
+            <li>GymRats — a fitness tracking application built with the MERN stack</li>
+            <li>OpsGuardian — a DevOps monitoring and operations management tool</li>
+            <li>VerifyFlow — a verification and workflow automation application</li>
             <li>AnveshOS — this interactive desktop-style portfolio, built with Next.js 15 and React 19</li>
           </ul>
           <h2>Expertise</h2>
           <p>
-            Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), AI agents,
-            LLM tooling, hybrid retrieval, semantic search, code intelligence, TypeScript,
-            Python, Node.js, AWS.
+            Full-stack web development, MERN stack, Next.js, React, TypeScript,
+            Node.js, MongoDB, Express.js, AWS, Docker, REST APIs, CI/CD.
           </p>
           <h2>Contact</h2>
           <p>Email: cheelaanvesh@gmail.com</p>
-          <p>Location: Boston, MA</p>
+          <p>Location: India</p>
           <p>GitHub: github.com/AnveshCheela</p>
           <p>LinkedIn: linkedin.com/in/anvesh-cheela-063013292/</p>
         </div>

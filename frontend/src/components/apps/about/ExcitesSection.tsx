@@ -28,10 +28,10 @@ export function ExcitesSection() {
           is the most interesting problem I&apos;ve found.
         </p>
         <p className="text-lg text-text-secondary leading-relaxed">
-          That&apos;s what OpenCodeIntel is: a production MCP server that gives coding
-          agents real code intelligence instead of letting them guess. Building at the
-          MCP layer isn&apos;t just calling a model. It&apos;s designing how it thinks
-          about a problem, and it has to be{" "}
+          That&apos;s what GymRats and OpsGuardian are about: full-stack platforms
+          that handle real users and real data at scale. Building with the MERN
+          stack and Next.js isn&apos;t just writing endpoints. It&apos;s designing
+          how systems work together, and they have to be{" "}
           <em className="emphasis-underline not-italic text-text">reliable</em> in
           production, not just a demo.
         </p>

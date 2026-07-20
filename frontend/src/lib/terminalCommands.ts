@@ -34,7 +34,7 @@ export const CONTACT = {
   email: 'cheelaanvesh@gmail.com',
   linkedin: 'linkedin.com/in/anvesh-cheela-063013292/',
   github: 'github.com/AnveshCheela',
-  web: 'opencodeintel.com',
+  web: 'anveshcheela.com',
 } as const;
 
 /** Aliases accepted by the `open` command, mapped to their app windows. */
@@ -90,7 +90,7 @@ export const commandRegistry: Record<string, CommandHandler> = {
     if (!q) {
       return [
         'Usage: ask <your question>',
-        '  e.g. ask what did he build with MCP',
+        '  e.g. ask what did he build with Next.js',
         '',
       ];
     }
@@ -102,15 +102,15 @@ export const commandRegistry: Record<string, CommandHandler> = {
     '│  Anvesh Cheela                    │',
     '│  Software Engineer                       │',
     '├──────────────────────────────────────────┤',
-    '│  MS Software Engineering                 │',
-    '│  Northeastern University                 │',
-    '│  Graduated: May 2026                     │',
-    '│  Location: Boston, MA                    │',
+    '│  B.Tech CSE                              │',
+    '│  IIIT SriCity                            │',
+    '│  Graduating: 2027                        │',
+    '│  Location: India                         │',
     '└──────────────────────────────────────────┘',
     '',
-    '  Currently: Open to founding-engineer + AI-engineer roles.',
-    '  Specialties: MCP servers, code intelligence,',
-    '              AI dev tools, RAG, full-stack.',
+    '  Currently: Open to software development roles.',
+    '  Specialties: Full-stack development,',
+    '              cloud infrastructure, DevOps.',
     '',
     '  Type `hire Anvesh` if you\'re a recruiter.',
     '  (Seriously, try it.)',
@@ -120,17 +120,11 @@ export const commandRegistry: Record<string, CommandHandler> = {
   projects: () => [
     'Things I\'ve shipped:',
     '',
-    '  ->  Financial Copilot   OCR/NLP receipt automation',
-    '  ->  Mem Machines        Serverless GCP pipelines, 1000+ RPM',
-    '  ->  OpenCodeIntel       Code intelligence platform (11 stars)',
-    '  ->  Saar                Auto-generates CLAUDE.md :: getsaar.com',
-    '  ->  ModerationKit       AI content moderation API',
-    '  ->  ModerKit Extension  Browser extension with persistent memory',
-    '  ->  TestPulse AI        Playwright test intelligence dashboard',
-    '  ->  Windborne           Weather visualization platform',
-    '  ->  Campus Resources    Student resource directory',
+    '  ->  GymRats             Fitness tracking platform',
+    '  ->  OpsGuardian         Infrastructure monitoring & ops management',
+    '  ->  VerifyFlow          Automated verification workflow engine',
     '  ->  SecureScale         99.9% uptime AWS infra with Terraform',
-    '  ->  AnveshOS               You\'re looking at it',
+    '  ->  AnveshOS            You\'re looking at it',
     '',
     '  Double-click the Projects icon to explore them.',
     '',
@@ -215,9 +209,8 @@ export const commandRegistry: Record<string, CommandHandler> = {
 
   github: () => [
     `  GitHub: ${CONTACT.github}`,
-    '  Org:    github.com/OpenCodeIntel',
+    '  Org:    github.com/AnveshCheela',
     '',
-    '  Personal repos: ~18  |  Org repos: 3',
     '  Top languages: TypeScript, Python, JavaScript',
     '',
     '  Open the Finder app to browse repos interactively.',

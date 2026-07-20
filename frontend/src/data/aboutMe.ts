@@ -27,8 +27,8 @@ const { personalInfo } = portfolioData;
 export const identity = {
   name:         personalInfo.name,
   title:        personalInfo.title,
-  location:     personalInfo.location,
-  availability: 'Open to founding-engineer + AI-engineer roles',
+  location:     'India',
+  availability: 'Open to software development roles',
   photo:        '/Anvesh-photo.png',
 } as const;
 
@@ -40,14 +40,14 @@ export const identity = {
 export const mastheadSpecLine = [
   'SOFTWARE DEVELOPER',
   'Building modern web applications',
-  'BOSTON',
-  'OCI / SAAR / CALLBUDGET',
+  'INDIA',
+  'GYMRATS / OPSGUARDIAN / VERIFYFLOW',
 ] as const;
 
 // ---------------------------------------------------------------------------
 // Overview spec sheet - "About This Machine" definition list. Mono values,
-// MetaLabel keys. Identity leaks from the work (MCP / OCI / Saar), never from
-// a degree, a graduation date, or an availability label.
+// MetaLabel keys. Identity leaks from the work, never from a degree,
+// a graduation date, or an availability label.
 // ---------------------------------------------------------------------------
 
 export interface SpecItem {
@@ -56,12 +56,12 @@ export interface SpecItem {
 }
 
 export const specs: SpecItem[] = [
-  { key: 'Discipline',  value: 'SOFTWARE DEVELOPERing · dev tools' },
-  { key: 'Layer',       value: 'MCP / agent workflow' },
-  { key: 'Stack',       value: 'TypeScript · Python · Go · AWS' },
-  { key: 'Retrieval',   value: 'Hybrid AST + BM25 + Cohere rerank' },
-  { key: 'Shipping',    value: 'OpenCodeIntel · Saar · CallBudget' },
-  { key: 'Based in',    value: 'Boston, MA' },
+  { key: 'Discipline',  value: 'Full-stack web development' },
+  { key: 'Layer',       value: 'MERN / Next.js · end-to-end' },
+  { key: 'Stack',       value: 'TypeScript · Next.js · Node.js · AWS' },
+  { key: 'Data',        value: 'PostgreSQL · MongoDB · Redis · BullMQ' },
+  { key: 'Shipping',    value: 'GymRats · OpsGuardian · VerifyFlow' },
+  { key: 'Based in',    value: 'India' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -69,8 +69,8 @@ export const specs: SpecItem[] = [
 // ---------------------------------------------------------------------------
 
 export const quickIntro = [
-  "Hey! I build AI dev tools at the MCP layer. OpenCodeIntel (a production MCP server with hybrid AST + BM25 + Cohere retrieval) and Saar (a Chrome extension on the Web Store that intercepts Claude.ai SSE streams for context-rot coaching). MS Software Engineering Systems from Northeastern, finished May 2026.",
-  "Before the MCP stuff I TA'd Network Structures & Cloud Computing for 60+ grad students. I genuinely love solving complex problems, whether it's optimizing APIs, architecting fault-tolerant infrastructure, or building tools that people actually use. The challenge of making complex things work simply? That's what gets me excited.",
+  "Hey! I'm a full-stack web developer who loves building robust, scalable applications from the ground up. I've shipped projects like GymRats (a fitness social platform), OpsGuardian (an infrastructure monitoring tool), and VerifyFlow (a document verification system) — all built with the MERN stack, Next.js, TypeScript, and backed by PostgreSQL, Redis, and Docker.",
+  "Currently pursuing my B.Tech in Computer Science and Engineering at IIIT SriCity (graduating 2027). I genuinely love solving complex problems, whether it's designing clean APIs, architecting reliable backend systems, or crafting smooth user experiences. The challenge of turning an idea into something people actually use? That's what gets me excited.",
 ] as const;
 
 export interface OriginCard {
@@ -98,12 +98,12 @@ export const originStory: OriginCard[] = [
   {
     iconName: 'Rocket',
     title:    'Building real things',
-    text:     "From struggling with a 2-month library database project to optimizing APIs at internships. Every failure taught patience. Every success unlocked new capabilities. That's still how I approach problems today.",
+    text:     "From struggling with a 2-month library database project to shipping full-stack apps with real users. Every failure taught patience. Every success unlocked new capabilities. That's still how I approach problems today.",
   },
 ];
 
 export const whatImAbout = [
-  "I build systems that work reliably under pressure. Distributed systems. Cloud infrastructure. APIs that respond fast. UIs that people can actually use.",
+  "I build full-stack web applications that work reliably under pressure. Clean APIs. Responsive UIs. Databases that scale. Infrastructure that doesn't fall over at 3 AM.",
   "But it's not just about the tech. It's about understanding the problem, communicating with teams, making smart trade-offs, and shipping things that matter.",
   "I'm here to learn, grow, and work on projects that actually make a difference. Always excited about opportunities that push boundaries.",
 ] as const;
@@ -115,7 +115,7 @@ export interface FunFact {
 }
 
 export const funFacts: FunFact[] = [
-  { iconName: 'Bot',   label: 'Current workflow', value: 'Claude + MCPs = learning on steroids' },
+  { iconName: 'Bot',   label: 'Current workflow', value: 'VS Code + TypeScript + Docker = shipping fast' },
   { iconName: 'Gauge', label: 'F1 enthusiast',    value: 'Max Verstappen fan, love the engineering' },
   { iconName: 'Flame', label: 'Hot take',         value: 'Team pineapple on pizza, fight me' },
 ];
@@ -137,9 +137,9 @@ export interface LearningItem {
 }
 
 export const currentlyMastering: LearningItem[] = [
-  { name: 'Go / Golang',          detail: 'Building high-performance microservices. The concurrency model is beautiful.' },
-  { name: 'Advanced Kubernetes',  detail: "Container orchestration at scale. Because Docker Compose isn't enough anymore." },
-  { name: 'System Design',        detail: 'Thinking at scale. Designing for failure. The big picture stuff.' },
+  { name: 'Advanced Next.js',      detail: 'Server components, app router, edge runtime. The React ecosystem keeps evolving.' },
+  { name: 'System Design',         detail: 'Thinking at scale. Designing for failure. The big picture stuff.' },
+  { name: 'DevOps & AWS',          detail: 'Docker, CI/CD pipelines, cloud infrastructure. Shipping with confidence.' },
 ];
 
 export const readingList = [
@@ -156,10 +156,10 @@ export interface LifeItem {
 }
 
 export const lifeItems: LifeItem[] = [
-  { iconName: 'Coffee',   title: 'Exploring Boston',   detail: "Good coffee shops for coding sessions. The city's got great spots." },
-  { iconName: 'Gauge',    title: 'Following F1',       detail: 'Max Verstappen fan. Love the strategy, the engineering, the speed.' },
-  { iconName: 'Star',     title: 'Staying connected',  detail: 'Celebrating festivals, staying connected to my roots. Ganesh Chaturthi this year was amazing.' },
-  { iconName: 'Dumbbell', title: 'Staying active',     detail: 'Gym helps clear the mind after long debugging sessions.' },
+  { iconName: 'Coffee',   title: 'Exploring India',      detail: "Finding great coffee shops and coding spots. India's got endless places to discover." },
+  { iconName: 'Gauge',    title: 'Following F1',         detail: 'Max Verstappen fan. Love the strategy, the engineering, the speed.' },
+  { iconName: 'Star',     title: 'Staying connected',    detail: 'Celebrating festivals, staying connected to my roots. Ganesh Chaturthi this year was amazing.' },
+  { iconName: 'Dumbbell', title: 'Staying active',       detail: 'Gym helps clear the mind after long debugging sessions.' },
 ];
 
 export const portfolioTechStack = [

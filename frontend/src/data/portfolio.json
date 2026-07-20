@@ -2,22 +2,22 @@
   "personalInfo": {
     "name": "Anvesh Cheela",
     "title": "SOFTWARE DEVELOPER · Building modern web applications",
-    "location": "Boston, MA",
+    "location": "India",
     "email": "cheelaanvesh@gmail.com",
-    "phone": "(857) 339-8803",
+    "phone": "+91-7013716285",
     "linkedin": "https://www.linkedin.com/in/anvesh-cheela-063013292/",
     "github": "https://github.com/AnveshCheela",
     "portfolio": "https://anvesh.dev",
-    "status": "Open to founding-engineer + AI-engineer roles at AI and dev-tools startups",
-    "graduation": "May 2026",
-    "degree": "MS in Software Engineering Systems",
-    "university": "Northeastern University"
+    "status": "Open to software development roles",
+    "graduation": "2027",
+    "degree": "B.Tech in Computer Science and Engineering",
+    "university": "Indian Institute of Information Technology, SriCity"
   },
   "bio": {
     "greeting": "Hey there!",
-    "intro": "I'm a software engineer building AI dev tools at the MCP layer. OpenCodeIntel (a production MCP server with hybrid AST + BM25 + Cohere retrieval) and Saar (a Chrome extension on the Web Store that intercepts Claude.ai SSE streams for context-rot coaching). Recently finished my MS at Northeastern.",
-    "passion": "I get genuinely excited about solving complex problems with clean, efficient code. Whether it's optimizing API performance, automating deployments, or building user-friendly interfaces, I'm all about creating technology that just works.",
-    "personal": "When I'm not coding, you'll probably find me exploring Boston, learning new tech, or working on side projects (like this interactive portfolio you're experiencing right now!)."
+    "intro": "I'm a full-stack software developer who builds robust web applications using the MERN stack, Next.js, and cloud technologies. Currently pursuing my B.Tech in Computer Science and Engineering at IIIT SriCity. I've built projects like GymRats, OpsGuardian, and VerifyFlow — each focused on solving real-world problems with clean architecture and modern tooling.",
+    "passion": "I get genuinely excited about backend architecture, distributed systems, and DevOps. Whether it's designing scalable APIs, automating CI/CD pipelines, or crafting responsive user interfaces, I'm all about creating technology that just works.",
+    "personal": "When I'm not coding, you'll probably find me exploring new technologies, diving into system design concepts, or working on side projects (like this interactive portfolio you're experiencing right now!)."
   },
   "achievements": [
     {

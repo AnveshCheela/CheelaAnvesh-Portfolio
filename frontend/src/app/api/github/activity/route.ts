@@ -11,7 +11,7 @@ import {
 export const revalidate = 600; // 10 minutes — fresher than repos because commits are time-sensitive
 
 const USER = 'AnveshCheela';
-const ORG = 'OpenCodeIntel';
+const ORG = 'AnveshCheela';
 
 export interface ActivityPayload {
   username: string;

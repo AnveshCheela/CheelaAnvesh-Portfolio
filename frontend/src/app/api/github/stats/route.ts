@@ -8,7 +8,7 @@ export async function GET() {
     const [stats, personalRepos, orgRepos] = await Promise.all([
       getUserStats('AnveshCheela').catch(() => ({ publicRepos: 0, followers: 0, following: 0 })),
       getUserRepos('AnveshCheela').catch(() => []),
-      getOrgRepos('OpenCodeIntel').catch(() => []),
+      getOrgRepos('AnveshCheela').catch(() => []),
     ]);
 
     const allRepos = [...personalRepos, ...orgRepos];

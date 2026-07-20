@@ -69,16 +69,16 @@ export function CurrentlySection() {
           What I&apos;m shipping
         </h3>
         <p className="text-lg text-text-secondary leading-relaxed">
-          Most of my energy goes into building at the MCP layer right now.{" "}
-          <span className="text-text">OpenCodeIntel</span> is a production MCP server
-          that gives coding agents real code intelligence through hybrid AST + BM25 +
-          Cohere retrieval.{" "}
-          <span className="text-text">Saar</span> is a Chrome extension on the Web
-          Store that reads Claude.ai streams to catch context rot.
+          Most of my energy goes into building full-stack web applications right now.{" "}
+          <span className="text-text">GymRats</span> is a MERN-stack fitness platform
+          with workout tracking, progress analytics, and social features powered by
+          Redis and BullMQ.{" "}
+          <span className="text-text">OpsGuardian</span> is an incident management
+          SaaS built with Next.js, PostgreSQL, and Prisma ORM for real-time alerting.
         </p>
         <p className="text-lg text-text-secondary leading-relaxed">
-          Both come from the same itch: making LLMs genuinely useful for the work
-          developers actually do, not just demos.
+          Both come from the same itch: building robust, scalable platforms that
+          solve real problems, not just demos.
         </p>
       </section>
 

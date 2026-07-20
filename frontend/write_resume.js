@@ -1,4 +1,5 @@
-/**
+﻿const fs = require('fs');
+const content = `/**
  * Resume data - single source of truth.
  *
  * Consumed by ResumeApp.tsx only.
@@ -8,7 +9,7 @@
  * Content mirrors the one-page resume. To update the resume copy: edit this file.
  * To update the downloadable PDF: replace public/resume.pdf.
  *
- * Note: ProjectsBody renders links as `https://${link}`, so project links are
+ * Note: ProjectsBody renders links as \`https://${link}\`, so project links are
  * stored bare (no protocol).
  */
 
@@ -192,3 +193,5 @@ export const RESUME: ResumeData = {
     { desc: 'Built and deployed multiple full-stack and cloud-native applications using MERN and AWS technologies.' }
   ],
 };
+`
+fs.writeFileSync('src/data/resume.ts', content, 'utf8');

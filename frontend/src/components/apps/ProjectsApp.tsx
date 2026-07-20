@@ -427,7 +427,7 @@ function DetailStage({ repo, number, reduced }: { repo: EnrichedRepo; number: st
     [repo.extraTech, repo.topics],
   );
   const seed = useMemo(() => seedFromName(repo.name), [repo.name]);
-  const orgLabel = repo.org === 'OpenCodeIntel' ? 'OpenCodeIntel' : '@AnveshCheela';
+  const orgLabel = '@AnveshCheela';
   const updated = new Date(repo.updatedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 
   return (
@@ -645,7 +645,7 @@ function buildStaticRepos(): EnrichedRepo[] {
     story: meta.story,
     achievements: meta.achievements,
     extraTech: meta.extraTech ?? [],
-    org: (meta.category === 'org' ? 'OpenCodeIntel' : 'AnveshCheela') as 'AnveshCheela' | 'OpenCodeIntel',
+    org: 'AnveshCheela' as 'AnveshCheela',
   }));
 }
 
@@ -664,7 +664,7 @@ function ProjectDetailMobile({ repo }: { repo: EnrichedRepo }) {
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
           <StatusLabel status={repo.status} />
           <MetaLabel className="text-text-secondary/70">
-            {repo.org === 'OpenCodeIntel' ? 'OpenCodeIntel' : '@AnveshCheela'}
+            {'@AnveshCheela'}
           </MetaLabel>
         </div>
         <h2 className="editorial-head text-text text-[2rem] leading-tight break-words text-balance">{repo.displayName}</h2>

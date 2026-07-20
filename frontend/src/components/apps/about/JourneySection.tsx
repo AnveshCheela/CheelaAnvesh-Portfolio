@@ -210,24 +210,23 @@ export function JourneySection() {
       <section className="flex flex-col gap-3">
         <p className="font-mono-meta">Now</p>
         <h3 className="editorial-head text-text text-[clamp(1.5rem,4cqi,2rem)]">
-          Building at the MCP layer
+          Building full-stack applications
         </h3>
         <p className="text-lg text-text-secondary leading-relaxed">
           Somewhere along the way, the thing that grabbed me as an 8-year-old came
-          back around. These days I build the workflow layer between LLMs and the
-          real work developers do.
+          back around. These days I build full-stack web applications that solve
+          real-world problems at scale.
         </p>
         <p className="text-lg text-text-secondary leading-relaxed">
-          <span className="text-text">OpenCodeIntel</span> is a production MCP server
-          that gives coding agents real code intelligence: hybrid retrieval over your
-          repo with AST structure, BM25 keywords, and Cohere reranking, so the agent
-          stops guessing about your codebase.{" "}
-          <span className="text-text">Saar</span> is a Chrome extension on the Web
-          Store that reads Claude.ai streams to catch context rot before it wrecks an
-          answer.
+          <span className="text-text">GymRats</span> is a MERN-stack fitness platform
+          with workout tracking and social features, backed by Redis and BullMQ.{" "}
+          <span className="text-text">OpsGuardian</span> is an incident management
+          SaaS built with Next.js, PostgreSQL, and Prisma ORM.{" "}
+          <span className="text-text">VerifyFlow</span> is a KYC verification
+          platform designed for secure, streamlined identity checks.
         </p>
         <p className="text-lg text-text leading-relaxed">
-          Same kid, same curiosity. Just pointed at the most interesting layer
+          Same kid, same curiosity. Just pointed at the most interesting stack
           I&apos;ve found yet.
         </p>
       </section>

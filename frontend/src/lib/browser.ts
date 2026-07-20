@@ -11,11 +11,10 @@
  */
 
 /**
- * Domains verified to permit framing. Only the portfolio allows it; OpenCodeIntel
- * and Saar send X-Frame-Options / frame-ancestors, so they intentionally fall to
- * the "open in new tab" card rather than rendering a blank/refused iframe. (To
- * embed them too, allow framing in those sites' own response headers, then add
- * them back here.)
+ * Domains verified to permit framing. Only the portfolio allows it; project
+ * repos (GymRats, OpsGuardian, VerifyFlow) are on GitHub and cannot be framed,
+ * so they intentionally fall to the "open in new tab" card rather than rendering
+ * a blank/refused iframe.
  */
 export const EMBEDDABLE_HOSTS = [
   'anveshcheela.com',
@@ -29,10 +28,11 @@ export interface StartLink {
   note: string;
 }
 
-/** The start-page grid: Anvesh's properties first, then the code. */
+/** The start-page grid: Anvesh's projects first, then the code. */
 export const START_LINKS: StartLink[] = [
-  { label: 'OpenCodeIntel', url: 'https://opencodeintel.com', note: 'Production MCP code-intelligence server' },
-  { label: 'Saar',          url: 'https://getsaar.com',       note: 'Context-rot coaching for Claude.ai' },
+  { label: 'GymRats',       url: 'https://github.com/AnveshCheela/GymRats',       note: 'GymRats project' },
+  { label: 'OpsGuardian',   url: 'https://github.com/AnveshCheela/OpsGuardian',   note: 'OpsGuardian project' },
+  { label: 'VerifyFlow',    url: 'https://github.com/AnveshCheela/VerifyFlow',    note: 'VerifyFlow project' },
   { label: 'Portfolio',     url: 'https://anveshcheela.com', note: 'This, on the open web' },
   { label: 'GitHub',        url: 'https://github.com/AnveshCheela', note: 'The code' },
 ];
