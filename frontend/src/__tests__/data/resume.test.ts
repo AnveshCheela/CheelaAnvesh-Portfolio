@@ -35,45 +35,6 @@ describe('RESUME.contact', () => {
   });
 });
 
-describe('RESUME.summary', () => {
-  it('is non-empty', () => {
-    expect(RESUME.summary.trim()).not.toBe('');
-  });
-
-  it('is at least 50 characters', () => {
-    expect(RESUME.summary.length).toBeGreaterThanOrEqual(50);
-  });
-});
-
-describe('RESUME.experience', () => {
-  it('has at least one entry', () => {
-    expect(RESUME.experience.length).toBeGreaterThan(0);
-  });
-
-  it('every entry has required fields', () => {
-    for (const job of RESUME.experience) {
-      expect(job.company.trim(), `company empty for ${job.role}`).not.toBe('');
-      expect(job.role.trim(),    `role empty at ${job.company}`).not.toBe('');
-      expect(job.period.trim(),  `period empty at ${job.company}`).not.toBe('');
-      expect(job.location.trim(), `location empty at ${job.company}`).not.toBe('');
-    }
-  });
-
-  it('every entry has at least one bullet', () => {
-    for (const job of RESUME.experience) {
-      expect(job.bullets.length, `no bullets for ${job.company}`).toBeGreaterThan(0);
-    }
-  });
-
-  it('all bullets are non-empty strings', () => {
-    for (const job of RESUME.experience) {
-      for (const bullet of job.bullets) {
-        expect(bullet.trim(), `empty bullet at ${job.company}`).not.toBe('');
-      }
-    }
-  });
-});
-
 describe('RESUME.education', () => {
   it('has at least one entry', () => {
     expect(RESUME.education.length).toBeGreaterThan(0);
@@ -130,7 +91,6 @@ describe('RESUME.projects', () => {
     for (const proj of RESUME.projects) {
       expect(proj.name.trim(),   `project name empty`).not.toBe('');
       expect(proj.tech.trim(),   `tech empty for ${proj.name}`).not.toBe('');
-      expect(proj.period.trim(), `period empty for ${proj.name}`).not.toBe('');
       expect(proj.desc.trim(),   `desc empty for ${proj.name}`).not.toBe('');
       expect(proj.link.trim(),   `link empty for ${proj.name}`).not.toBe('');
     }

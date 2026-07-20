@@ -47,7 +47,7 @@ import {
   FolderOpen,
 } from 'lucide-react';
 import type { EnrichedRepo } from '@/app/api/github/repos/route';
-import { projectMeta } from '@/data/projectMeta';
+import { projectMeta, getFeaturedProjects } from '@/data/projectMeta';
 import MobilePushView, { useMobileNavigation } from '@/components/mobile/ui/MobilePushView';
 import IconTile from '@/components/mobile/ui/IconTile';
 import MobileSection from '@/components/mobile/ui/MobileSection';
@@ -627,13 +627,13 @@ function EmptyStage() {
 // ---------------------------------------------------------------------------
 
 function buildStaticRepos(): EnrichedRepo[] {
-  return Object.entries(projectMeta).map(([name, meta]) => ({
+  const repos: EnrichedRepo[] = Object.entries(projectMeta).map(([name, meta]) => ({
     name,
     displayName: meta.displayName,
     tagline: meta.tagline,
     description: meta.descriptionOverride ?? meta.tagline,
     htmlUrl: `https://github.com/AnveshCheela/${name}`,
-    homepage: null,
+    homepage: meta.homepageOverride ?? null,
     language: meta.extraTech?.[0] ?? null,
     stars: 0,
     forks: 0,
@@ -647,6 +647,18 @@ function buildStaticRepos(): EnrichedRepo[] {
     extraTech: meta.extraTech ?? [],
     org: 'AnveshCheela' as 'AnveshCheela',
   }));
+
+  const explicitOrder = getFeaturedProjects();
+  repos.sort((a, b) => {
+    const idxA = explicitOrder.indexOf(a.name);
+    const idxB = explicitOrder.indexOf(b.name);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return 0; // static fallback doesn't have real dates
+  });
+
+  return repos;
 }
 
 // ---------------------------------------------------------------------------

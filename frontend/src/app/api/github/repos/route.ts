@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getUserRepos, getOrgRepos } from '@/lib/github';
-import { projectMeta } from '@/data/projectMeta';
+import { projectMeta, getFeaturedProjects } from '@/data/projectMeta';
 
 export const revalidate = 3600; // 1 hour
 
@@ -41,7 +41,7 @@ export async function GET() {
           tagline: meta?.tagline ?? repo.description ?? '',
           description: repo.description,
           htmlUrl: repo.html_url,
-          homepage: repo.homepage,
+          homepage: meta?.homepageOverride ?? repo.homepage,
           language: repo.language,
           stars: repo.stargazers_count,
           forks: repo.forks_count,
@@ -79,7 +79,7 @@ export async function GET() {
           tagline: meta.tagline,
           description: meta.descriptionOverride ?? meta.tagline,
           htmlUrl: '',
-          homepage: null,
+          homepage: meta.homepageOverride ?? null,
           language: meta.extraTech?.[0] ?? null,
           stars: 0,
           forks: 0,
@@ -95,6 +95,16 @@ export async function GET() {
         });
       }
     }
+
+    const explicitOrder = getFeaturedProjects();
+    unique.sort((a, b) => {
+      const idxA = explicitOrder.indexOf(a.name);
+      const idxB = explicitOrder.indexOf(b.name);
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      if (idxA !== -1) return -1;
+      if (idxB !== -1) return 1;
+      return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+    });
 
     return NextResponse.json(unique, {
       headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400' },

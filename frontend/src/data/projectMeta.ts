@@ -21,6 +21,8 @@ export interface ProjectMeta {
   status: 'active' | 'completed' | 'experimental';
   /** Override the GitHub description */
   descriptionOverride?: string;
+  /** Override the GitHub homepage/deployment URL */
+  homepageOverride?: string;
   /** Tech stack (augments GitHub topics) */
   extraTech?: string[];
 }
@@ -48,6 +50,7 @@ export const projectMeta: Record<string, ProjectMeta> = {
     featured: true,
     category: 'personal',
     status: 'completed',
+    homepageOverride: "https://gymrats-react.vercel.app",
     story: ["A comprehensive fitness tracking application built with React."],
     achievements: [],
     extraTech: ['React', 'JavaScript'],
@@ -72,7 +75,7 @@ export const projectMeta: Record<string, ProjectMeta> = {
     achievements: [],
     extraTech: ['Python', 'Machine Learning'],
   },
-  'VerifyFlow': {
+  'Digital-KYC-Verification-Platform': {
     displayName: "VerifyFlow",
     tagline: "Identity verification platform",
     featured: true,
@@ -111,7 +114,7 @@ export function getFeaturedProjects(): string[] {
     'Gymrats-React',
     'OpsGuardian',
     'Intelligent-House-Price-Prediction-System',
-    'VerifyFlow',
+    'Digital-KYC-Verification-Platform',
     'QueueFlow',
     'Intelligent-Vendor-Routing-Platform'
   ];
