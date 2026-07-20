@@ -30,11 +30,17 @@ export interface StartLink {
 
 /** The start-page grid: Anvesh's projects first, then the code. */
 export const START_LINKS: StartLink[] = [
-  { label: 'GymRats',       url: 'https://github.com/AnveshCheela/GymRats',       note: 'GymRats project' },
-  { label: 'OpsGuardian',   url: 'https://github.com/AnveshCheela/OpsGuardian',   note: 'OpsGuardian project' },
-  { label: 'VerifyFlow',    url: 'https://github.com/AnveshCheela/VerifyFlow',    note: 'VerifyFlow project' },
+  { label: 'GymRats',       url: 'https://gymrats-react.vercel.app',       note: 'Live App' },
+  { label: 'GymRats Code',  url: 'https://github.com/AnveshCheela/Gymrats-React', note: 'GitHub Repo' },
+  { label: 'OpsGuardian',   url: 'https://ops-guardian-zeta.vercel.app',   note: 'Live App' },
+  { label: 'OpsGuardian Code', url: 'https://github.com/AnveshCheela/OpsGuardian', note: 'GitHub Repo' },
+  { label: 'VerifyFlow',    url: 'https://digital-kyc-verification-platform.vercel.app',    note: 'Live App' },
+  { label: 'VerifyFlow Code', url: 'https://github.com/AnveshCheela/Digital-KYC-Verification-Platform', note: 'GitHub Repo' },
+  { label: 'QueueFlow',     url: 'https://queue-flow-two.vercel.app', note: 'Live App' },
+  { label: 'QueueFlow Code', url: 'https://github.com/AnveshCheela/QueueFlow', note: 'GitHub Repo' },
+  { label: 'House Price AI', url: 'https://github.com/AnveshCheela/Intelligent-House-Price-Prediction-System', note: 'GitHub Repo' },
   { label: 'Portfolio',     url: 'https://anveshcheela.com', note: 'This, on the open web' },
-  { label: 'GitHub',        url: 'https://github.com/AnveshCheela', note: 'The code' },
+  { label: 'GitHub Profile', url: 'https://github.com/AnveshCheela', note: 'My profile' },
 ];
 
 /** Turn whatever the user typed into a navigable URL. */
