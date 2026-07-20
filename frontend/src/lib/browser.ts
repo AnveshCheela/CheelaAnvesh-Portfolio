@@ -24,22 +24,61 @@ export const START_URL = 'about:home';
 
 export interface StartLink {
   label: string;
-  url: string;
   note: string;
+  url?: string;
+  links?: { label: string; url: string }[];
 }
 
 /** The start-page grid: Anvesh's projects first, then the code. */
 export const START_LINKS: StartLink[] = [
-  { label: 'GymRats',       url: 'https://gymrats-react.vercel.app',       note: 'Live App' },
-  { label: 'GymRats Code',  url: 'https://github.com/AnveshCheela/Gymrats-React', note: 'GitHub Repo' },
-  { label: 'OpsGuardian',   url: 'https://ops-guardian-zeta.vercel.app',   note: 'Live App' },
-  { label: 'OpsGuardian Code', url: 'https://github.com/AnveshCheela/OpsGuardian', note: 'GitHub Repo' },
-  { label: 'VerifyFlow',    url: 'https://digital-kyc-verification-platform.vercel.app',    note: 'Live App' },
-  { label: 'VerifyFlow Code', url: 'https://github.com/AnveshCheela/Digital-KYC-Verification-Platform', note: 'GitHub Repo' },
-  { label: 'QueueFlow',     url: 'https://queue-flow-two.vercel.app', note: 'Live App' },
-  { label: 'QueueFlow Code', url: 'https://github.com/AnveshCheela/QueueFlow', note: 'GitHub Repo' },
-  { label: 'House Price AI', url: 'https://github.com/AnveshCheela/Intelligent-House-Price-Prediction-System', note: 'GitHub Repo' },
-  { label: 'Portfolio',     url: 'https://anveshcheela.com', note: 'This, on the open web' },
+  {
+    label: 'GymRats',
+    note: 'Fitness tracking app',
+    links: [
+      { label: 'Live App', url: 'https://gymrats-react.vercel.app' },
+      { label: 'GitHub Code', url: 'https://github.com/AnveshCheela/Gymrats-React' }
+    ]
+  },
+  {
+    label: 'OpsGuardian',
+    note: 'Incident management',
+    links: [
+      { label: 'Live App', url: 'https://ops-guardian-zeta.vercel.app' },
+      { label: 'GitHub Code', url: 'https://github.com/AnveshCheela/OpsGuardian' }
+    ]
+  },
+  {
+    label: 'VerifyFlow',
+    note: 'Digital KYC',
+    links: [
+      { label: 'Live App', url: 'https://digital-kyc-verification-platform.vercel.app' },
+      { label: 'GitHub Code', url: 'https://github.com/AnveshCheela/Digital-KYC-Verification-Platform' }
+    ]
+  },
+  {
+    label: 'QueueFlow',
+    note: 'Queue management',
+    links: [
+      { label: 'Live App', url: 'https://queue-flow-two.vercel.app' },
+      { label: 'GitHub Code', url: 'https://github.com/AnveshCheela/QueueFlow' }
+    ]
+  },
+  {
+    label: 'Intelligent Vendor Routing System',
+    note: 'Vendor routing',
+    url: 'https://github.com/AnveshCheela/Intelligent-Vendor-Routing-System'
+  },
+  {
+    label: 'Wealth.ai',
+    note: 'Wealth management AI',
+    url: 'https://github.com/AnveshCheela/Wealth.ai'
+  },
+  {
+    label: 'House Price AI',
+    note: 'Prediction system',
+    url: 'https://github.com/AnveshCheela/Intelligent-House-Price-Prediction-System'
+  },
+  { label: 'Portfolio', url: 'https://anveshcheela.com', note: 'This, on the open web' },
   { label: 'GitHub Profile', url: 'https://github.com/AnveshCheela', note: 'My profile' },
 ];
 

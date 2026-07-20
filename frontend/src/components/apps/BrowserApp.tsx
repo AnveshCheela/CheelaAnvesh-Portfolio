@@ -307,13 +307,14 @@ function StartPage({
             <div className="flex flex-col">
               {START_LINKS.map((link, i) => (
                 <StartTile
-                  key={link.url}
+                  key={link.label}
                   index={String(i + 1).padStart(2, '0')}
                   label={link.label}
                   note={link.note}
                   url={link.url}
+                  links={link.links}
                   reduced={reduced}
-                  onOpen={() => onOpen(link.url)}
+                  onOpen={onOpen}
                 />
               ))}
             </div>
@@ -333,62 +334,101 @@ function StartPage({
  * gated on reduced motion. The trailing hairline rules the column.
  */
 function StartTile({
-  index, label, note, url, reduced, onOpen,
+  index, label, note, url, links, reduced, onOpen,
 }: {
   index: string;
   label: string;
   note: string;
-  url: string;
+  url?: string;
+  links?: { label: string; url: string }[];
   reduced: boolean | null;
-  onOpen: () => void;
+  onOpen: (url: string) => void;
 }) {
-  const host = hostOf(url) ?? url;
+  const [expanded, setExpanded] = useState(false);
+
+  const handleClick = () => {
+    if (url) {
+      onOpen(url);
+    } else if (links) {
+      setExpanded((e) => !e);
+    }
+  };
+
+  const host = url ? (hostOf(url) ?? url) : (expanded ? 'Select a link below' : `${links?.length} links`);
+
   return (
-    <motion.button
-      type="button"
+    <motion.div
       variants={reveal.item(reduced)}
-      onClick={onOpen}
-      whileTap={reduced ? undefined : { scale: 0.99 }}
-      transition={{ duration: 0.12, ease: EASE_OUT }}
-      data-testid="start-tile"
-      className="group flex w-full items-baseline gap-4 border-b border-border py-4 text-left
-                 focus-visible:outline-none"
+      className="flex flex-col border-b border-border"
     >
-      <MetaLabel className="w-8 shrink-0 justify-start text-text-secondary">{index}</MetaLabel>
+      <motion.button
+        type="button"
+        onClick={handleClick}
+        whileTap={reduced ? undefined : { scale: 0.99 }}
+        transition={{ duration: 0.12, ease: EASE_OUT }}
+        data-testid="start-tile"
+        className="group flex w-full items-baseline gap-4 py-4 text-left focus-visible:outline-none"
+      >
+        <MetaLabel className="w-8 shrink-0 justify-start text-text-secondary">{index}</MetaLabel>
 
-      <span className="min-w-0 flex-1">
-        <span className="relative inline-block max-w-full">
-          <span
-            className="block truncate font-display leading-tight text-text"
-            // Window-dynamic site name: scales with window width (cqi), max = original 18px.
-            style={{ fontSize: 'clamp(0.95rem, 2.8cqi, 1.125rem)' }}
-          >
-            {label}
+        <span className="min-w-0 flex-1">
+          <span className="relative inline-block max-w-full">
+            <span
+              className="block truncate font-display leading-tight text-text"
+              style={{ fontSize: 'clamp(0.95rem, 2.8cqi, 1.125rem)' }}
+            >
+              {label}
+            </span>
+            <span
+              aria-hidden
+              className={cn(
+                'block h-px origin-left scale-x-0 bg-text/50 transition-transform duration-200',
+                reduced ? '' : '[@media(hover:hover)and(pointer:fine)]:group-hover:scale-x-100',
+              )}
+            />
           </span>
-          {/* Hairline underline grows on hover (scaleX, transform-only). */}
           <span
-            aria-hidden
-            className={cn(
-              'block h-px origin-left scale-x-0 bg-text/50 transition-transform duration-200',
-              // Gate hover motion to a fine pointer + real hover so a touch tap
-              // doesn't fire a false hover (Emil a11y rule).
-              reduced ? '' : '[@media(hover:hover)and(pointer:fine)]:group-hover:scale-x-100',
-            )}
-          />
+            className="mt-1 block truncate font-mono text-text-secondary"
+            style={{ fontSize: 'clamp(0.62rem, 1.4cqi, 0.72rem)' }}
+          >
+            {host}
+          </span>
         </span>
-        <span
-          className="mt-1 block truncate font-mono text-text-secondary"
-          // Window-dynamic host line: scales with window width (cqi), max = original 11.5px.
-          style={{ fontSize: 'clamp(0.62rem, 1.4cqi, 0.72rem)' }}
-        >
-          {host}
-        </span>
-      </span>
 
-      <span className="mt-1 hidden shrink-0 text-text-secondary/70 transition-colors group-hover:text-text sm:block">
-        <ExternalLink size={13} aria-hidden />
-      </span>
-    </motion.button>
+        <span className="mt-1 hidden shrink-0 text-text-secondary/70 transition-colors group-hover:text-text sm:block">
+          {url ? <ExternalLink size={13} aria-hidden /> : <span className="font-mono text-xs">{expanded ? '−' : '+'}</span>}
+        </span>
+      </motion.button>
+
+      {expanded && links && (
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          className="flex flex-col gap-1 pl-12 pb-4"
+        >
+          {links.map((l) => (
+            <button
+              key={l.url}
+              onClick={() => onOpen(l.url)}
+              className="group/link flex w-full items-baseline gap-3 py-2 text-left focus-visible:outline-none"
+            >
+              <span className="h-px w-1.5 bg-border transition-colors group-hover/link:bg-text" />
+              <span className="min-w-0 flex-1">
+                <span className="block font-mono text-sm text-text transition-colors group-hover/link:text-text">
+                  {l.label}
+                </span>
+                <span className="mt-0.5 block truncate font-mono text-[10px] text-text-secondary opacity-60">
+                  {hostOf(l.url) ?? l.url}
+                </span>
+              </span>
+              <span className="mr-2 mt-1 shrink-0 text-text-secondary/40 transition-colors group-hover/link:text-text">
+                <ExternalLink size={11} aria-hidden />
+              </span>
+            </button>
+          ))}
+        </motion.div>
+      )}
+    </motion.div>
   );
 }
 
