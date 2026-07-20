@@ -37,7 +37,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
-  SKILLS, CAT_LABEL, LEVEL_LABEL, SKILL_CATEGORIES,
+  SKILLS, CAT_LABEL, SKILL_CATEGORIES,
   type Skill, type FilterCategory,
 } from '@/data/skills';
 import { MetaLabel, Hairline } from '@/components/editorial';
@@ -314,13 +314,6 @@ function SkillCard({
         </div>
       </div>
 
-      {/* Level read-out: weighted dot meter + named tier + experience. */}
-      <div className="flex items-center justify-between gap-3">
-        <DotMeter level={skill.level} />
-        <MetaLabel className="text-text-secondary shrink-0">
-          {LEVEL_LABEL[skill.level]} <span aria-hidden className="opacity-40 mx-1">/</span> {skill.xp}
-        </MetaLabel>
-      </div>
 
       <p
         className="leading-relaxed text-text-secondary line-clamp-2"
