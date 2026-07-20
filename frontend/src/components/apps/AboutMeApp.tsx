@@ -73,14 +73,7 @@ function Masthead({ size = 140 }: { size?: number }) {
       animate="show"
       className="flex flex-col gap-6 sm:flex-row sm:items-end sm:gap-7"
     >
-      <motion.div variants={reveal.item(reduced)}>
-        <Portrait
-          src={identity.photo}
-          alt={`Portrait of ${identity.name}`}
-          size={size}
-          priority
-        />
-      </motion.div>
+
 
       <div className="flex flex-1 flex-col gap-3 min-w-0">
         <motion.h1
