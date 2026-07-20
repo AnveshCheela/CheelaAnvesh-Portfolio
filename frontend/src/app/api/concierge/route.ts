@@ -1,14 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { buildConciergeSystem, MAX_QUERY_LENGTH, sanitizeVoice, clampMessages } from '@/lib/conciergeContext';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-// Sonnet follows the voice + no-em-dash + anti-recitation instructions far
-// better than Haiku; cost stays bounded by max_tokens, prompt caching, and the
-// rate limit below. Override via env.
-const DEFAULT_MODEL = 'claude-sonnet-4-6';
+const DEFAULT_MODEL = 'gemini-1.5-flash';
 // Bound the answer (and the cost). Concierge replies are 2-3 sentences.
 const MAX_TOKENS = 400;
 
@@ -74,7 +71,7 @@ async function getLimiter(): Promise<Limiter> {
 
 export async function POST(req: NextRequest) {
   // Hard gate: without a key the concierge is "offline" and the UI falls back.
-  if (!process.env.ANTHROPIC_API_KEY) {
+  if (!process.env.GEMINI_API_KEY) {
     return NextResponse.json({ error: 'concierge_unconfigured' }, { status: 503 });
   }
 
@@ -96,7 +93,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'empty_query' }, { status: 400 });
   }
   const latestUser = [...thread].reverse().find((m) => m.role === 'user');
-  if (latestUser && latestUser.content.length > MAX_QUERY_LENGTH) {
+  if (!latestUser) {
+    return NextResponse.json({ error: 'empty_query' }, { status: 400 });
+  }
+  if (latestUser.content.length > MAX_QUERY_LENGTH) {
     return NextResponse.json({ error: 'query_too_long' }, { status: 413 });
   }
 
@@ -108,45 +108,49 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
   }
 
-  const client = new Anthropic();
-  const stream = client.messages.stream({
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({
     model: process.env.CONCIERGE_MODEL || DEFAULT_MODEL,
-    max_tokens: MAX_TOKENS,
-    // Grounding lives in a cached system block: stable prefix, so repeat
-    // questions read it at ~0.1x input cost instead of re-billing it.
-    system: [
-      {
-        type: 'text',
-        text: buildConciergeSystem(),
-        cache_control: { type: 'ephemeral' },
-      },
-    ],
-    messages: thread,
+    systemInstruction: buildConciergeSystem(),
+    generationConfig: {
+      maxOutputTokens: MAX_TOKENS,
+    },
   });
 
-  // Stream only the text deltas as plain text — the client just appends them.
-  const encoder = new TextEncoder();
-  const readable = new ReadableStream<Uint8Array>({
-    async start(controller) {
-      try {
-        for await (const event of stream) {
-          if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
-            // Strip em/en dashes server-side too (defense in depth).
-            controller.enqueue(encoder.encode(sanitizeVoice(event.delta.text)));
+  const history = thread.slice(0, -1).map((m: any) => ({
+    role: m.role === 'assistant' ? 'model' : 'user',
+    parts: [{ text: m.content }],
+  }));
+
+  const chat = model.startChat({ history });
+
+  try {
+    const result = await chat.sendMessageStream(latestUser.content);
+
+    const encoder = new TextEncoder();
+    const readable = new ReadableStream<Uint8Array>({
+      async start(controller) {
+        try {
+          for await (const chunk of result.stream) {
+            const chunkText = chunk.text();
+            controller.enqueue(encoder.encode(sanitizeVoice(chunkText)));
           }
+          controller.close();
+        } catch (err) {
+          console.error('Concierge stream error:', err);
+          controller.error(err);
         }
-        controller.close();
-      } catch (err) {
-        console.error('Concierge stream error:', err);
-        controller.error(err);
-      }
-    },
-  });
+      },
+    });
 
-  return new Response(readable, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': 'no-store',
-    },
-  });
+    return new Response(readable, {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Cache-Control': 'no-store',
+      },
+    });
+  } catch (err) {
+    console.error('Gemini error:', err);
+    return NextResponse.json({ error: 'error' }, { status: 500 });
+  }
 }
