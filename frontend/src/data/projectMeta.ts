@@ -42,12 +42,78 @@ export const projectMeta: Record<string, ProjectMeta> = {
     ],
     extraTech: ['Next.js 15', 'React 19', 'TypeScript', 'Framer Motion', 'Zustand', 'Tailwind CSS'],
   },
+  'Gymrats-React': {
+    displayName: "Gymrats",
+    tagline: "Your ultimate fitness companion",
+    featured: true,
+    category: 'personal',
+    status: 'completed',
+    story: ["A comprehensive fitness tracking application built with React."],
+    achievements: [],
+    extraTech: ['React', 'JavaScript'],
+  },
+  'OpsGuardian': {
+    displayName: "OpsGuardian",
+    tagline: "Cloud Operations Monitoring",
+    featured: true,
+    category: 'personal',
+    status: 'completed',
+    story: ["A robust cloud monitoring and operations dashboard."],
+    achievements: [],
+    extraTech: [],
+  },
+  'Intelligent-House-Price-Prediction-System': {
+    displayName: "Intelligent House Price Prediction",
+    tagline: "AI-powered real estate valuation",
+    featured: true,
+    category: 'personal',
+    status: 'completed',
+    story: ["Machine learning models to predict housing prices with high accuracy."],
+    achievements: [],
+    extraTech: ['Python', 'Machine Learning'],
+  },
+  'VerifyFlow': {
+    displayName: "VerifyFlow",
+    tagline: "Identity verification platform",
+    featured: true,
+    category: 'personal',
+    status: 'completed',
+    story: ["A seamless and secure identity verification workflow system."],
+    achievements: [],
+    extraTech: [],
+  },
+  'QueueFlow': {
+    displayName: "QueueFlow",
+    tagline: "Advanced queue management",
+    featured: true,
+    category: 'personal',
+    status: 'completed',
+    story: ["System for managing and optimizing queue processing."],
+    achievements: [],
+    extraTech: [],
+  },
+  'Intelligent-Vendor-Routing-Platform': {
+    displayName: "Intelligent Vendor Routing System",
+    tagline: "Smart vendor allocation and routing",
+    featured: true,
+    category: 'personal',
+    status: 'completed',
+    story: ["An intelligent platform for routing and managing vendor logistics."],
+    achievements: [],
+    extraTech: [],
+  }
 };
 
 /** Get all featured projects in display order */
 export function getFeaturedProjects(): string[] {
   const explicit = [
-    'CheelaAnvesh-Portfolio'
+    'CheelaAnvesh-Portfolio',
+    'Gymrats-React',
+    'OpsGuardian',
+    'Intelligent-House-Price-Prediction-System',
+    'VerifyFlow',
+    'QueueFlow',
+    'Intelligent-Vendor-Routing-Platform'
   ];
   // Append any featured projects not explicitly listed, preserving declaration order
   const rest = Object.keys(projectMeta).filter(
