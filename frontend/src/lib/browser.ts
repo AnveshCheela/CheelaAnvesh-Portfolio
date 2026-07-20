@@ -66,12 +66,20 @@ export const START_LINKS: StartLink[] = [
   {
     label: 'Intelligent Vendor Routing System',
     note: 'Vendor routing',
-    url: 'https://github.com/AnveshCheela/Intelligent-Vendor-Routing-System'
+    links: [
+      { label: 'Live App', url: 'https://frontend-drab-psi-qrk3ksyoio.vercel.app/' },
+      { label: 'GitHub Code', url: 'https://github.com/AnveshCheela/Intelligent-Vendor-Routing-Platform' }
+    ]
   },
   {
     label: 'Wealth.ai',
     note: 'Wealth management AI',
-    url: 'https://github.com/AnveshCheela/Wealth.ai'
+    url: 'https://github.com/AnveshCheela/Wealth-AI'
+  },
+  {
+    label: 'AutoDesk Agent',
+    note: 'Autonomous agent',
+    url: 'https://github.com/AnveshCheela/AutoDesk_Agent'
   },
   {
     label: 'House Price AI',
