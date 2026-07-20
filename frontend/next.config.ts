@@ -35,7 +35,20 @@ const nextConfig: NextConfig = {
       // NOTE: Content-Security-Policy is intentionally deferred. A strict CSP
       // risks breaking framer-motion, PostHog analytics, inline JSON-LD, and
       // Next.js inline runtime; adding it the night before launch is too risky.
-      // Revisit CSP post-launch with proper testing.
+      {
+        source: '/resume.pdf',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/pdf',
+          },
+          {
+            key: 'Content-Disposition',
+            value: 'inline; filename="resume.pdf"',
+          }
+        ],
+      },
+      // Baseline security headers for all routes
       {
         source: '/:path*',
         headers: [

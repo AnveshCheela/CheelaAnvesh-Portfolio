@@ -357,14 +357,24 @@ function PdfView({ reduced }: { reduced: boolean | null }) {
           <MetaLabel className="animate-pulse text-text-secondary">Loading PDF...</MetaLabel>
         </div>
       )}
-      <iframe
-        src={PDF_HREF}
-        className={`relative z-10 h-[80vh] w-full flex-1 transition-opacity duration-500 ${
-          loaded ? 'opacity-100' : 'opacity-0'
-        }`}
+      <object
+        data={PDF_HREF}
+        type="application/pdf"
+        className={`relative z-10 h-[80vh] w-full flex-1 transition-opacity duration-500 opacity-100`}
         onLoad={() => setLoaded(true)}
         title="Resume PDF"
-      />
+      >
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-bg p-8 text-center">
+          <p className="text-text-secondary">Unable to display PDF file.</p>
+          <a
+            href={PDF_HREF}
+            download={PDF_DOWNLOAD}
+            className="rounded bg-text px-4 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-80"
+          >
+            Download PDF Instead
+          </a>
+        </div>
+      </object>
     </motion.div>
   );
 }
