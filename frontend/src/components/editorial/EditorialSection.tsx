@@ -51,7 +51,7 @@ export default function EditorialSection({
       className={cn('flex flex-col', className)}
     >
       {(hasEyebrow || title !== undefined) && (
-        <header className="flex flex-col gap-3">
+        <header className="flex flex-col gap-4">
           {hasEyebrow && (
             <MetaLabel>
               {number !== undefined && (
@@ -69,7 +69,7 @@ export default function EditorialSection({
           {title !== undefined && (
             <h2
               data-testid="editorial-section-title"
-              className="editorial-head text-text"
+              className="editorial-head text-text break-words text-balance"
             >
               {title}
             </h2>

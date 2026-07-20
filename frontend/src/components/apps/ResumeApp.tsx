@@ -48,7 +48,7 @@ function Masthead() {
     <div className="flex flex-col gap-4">
       <motion.h1
         variants={reveal.item(reduced)}
-        className="editorial-hero font-display text-text leading-[0.95]"
+        className="font-display text-text leading-[0.95] text-4xl lg:text-5xl tracking-tight break-words"
       >
         {RESUME.name}
       </motion.h1>
