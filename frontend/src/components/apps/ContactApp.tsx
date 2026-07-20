@@ -408,17 +408,31 @@ export default function ContactApp(_props: ContactAppProps = {}) {
                               Something broke on my end.
                             </span>
                           </span>
-                          <button
-                            type="button"
-                            onClick={() => setStatus("idle")}
-                            className="font-mono-meta text-text-secondary
-                                       transition-[color,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]
-                                       hover:text-text active:scale-[0.97] active:duration-100
-                                       motion-reduce:active:scale-100
-                                       focus-visible:outline-none focus-visible:text-text"
-                          >
-                            Retry
-                          </button>
+                          <div className="flex items-center gap-6">
+                            <a
+                              href={`mailto:${contactLinks.email}?subject=${encodeURIComponent(formData.subject || "Hello")}&body=${encodeURIComponent(
+                                `From: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\n${formData.message}`
+                              )}`}
+                              className="font-mono-meta text-text-secondary
+                                         transition-[color,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]
+                                         hover:text-text active:scale-[0.97] active:duration-100
+                                         motion-reduce:active:scale-100
+                                         focus-visible:outline-none focus-visible:text-text"
+                            >
+                              Email directly instead ↗
+                            </a>
+                            <button
+                              type="button"
+                              onClick={() => setStatus("idle")}
+                              className="font-mono-meta text-text-secondary
+                                         transition-[color,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]
+                                         hover:text-text active:scale-[0.97] active:duration-100
+                                         motion-reduce:active:scale-100
+                                         focus-visible:outline-none focus-visible:text-text"
+                            >
+                              Retry
+                            </button>
+                          </div>
                         </div>
                         <Hairline />
                       </motion.div>
