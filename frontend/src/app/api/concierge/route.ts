@@ -5,7 +5,7 @@ import { buildConciergeSystem, MAX_QUERY_LENGTH, sanitizeVoice, clampMessages } 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const DEFAULT_MODEL = 'gemini-1.5-flash';
+const DEFAULT_MODEL = 'gemini-2.5-flash';
 // Bound the answer (and the cost). Concierge replies are 2-3 sentences.
 const MAX_TOKENS = 400;
 
@@ -149,8 +149,11 @@ export async function POST(req: NextRequest) {
         'Cache-Control': 'no-store',
       },
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error('Gemini error:', err);
+    if (err?.status === 429) {
+      return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+    }
     return NextResponse.json({ error: 'error' }, { status: 500 });
   }
 }
